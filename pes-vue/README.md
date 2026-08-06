@@ -1,4 +1,4 @@
-
+﻿
 # PES Vue Frontend
 
 Vue 3 frontend for PES (Permission & Enterprise System).
@@ -34,6 +34,7 @@ src/
 ├── components/    # 公共组件
 ├── composables/   # 组合式函数
 ├── directives/    # 自定义指令
+├── img/           # 图片资源
 ├── router/        # 路由配置
 ├── store/         # Pinia 状态管理
 ├── utils/         # 工具函数
@@ -54,5 +55,9 @@ src/
 Create `.env.development` and `.env.production` files:
 
 ```
-VITE_API_BASE_URL=http://localhost:8080/api
+# 开发环境：Vite 代理自动转发 /api → http://localhost:8080（去掉 /api 前缀）
+VITE_API_BASE_URL=/api
+
+# 生产环境：直接指向后端地址
+# VITE_API_BASE_URL=http://your-server:8080
 ```
