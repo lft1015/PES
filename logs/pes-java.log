@@ -1438,3 +1438,1040 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 2026-08-07 16:48:58.895 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
 2026-08-07 16:48:58.906 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
 2026-08-07 16:48:58.918 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /logout
+2026-08-07 17:23:52.244 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m3s986ms304µs).
+2026-08-07 18:15:21.686 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m28s828ms268µs800ns).
+2026-08-07 18:17:36.544 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /dashboard/stats
+2026-08-07 18:17:36.550 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-08-07 18:19:20.365 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /dashboard/stats
+2026-08-07 18:19:20.381 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 18:19:20.381 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 18:19:20.387 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 18:19:20.387 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 18:19:20.387 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 18:19:20.392 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 18:19:20.392 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 18:19:20.392 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 18:19:20.392 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 18:19:20.392 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 18:19:20.392 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 18:19:20.398 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 18:19:20.398 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /dashboard/stats
+2026-08-07 18:19:20.410 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_user
+2026-08-07 18:19:20.410 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectCount - ==> Parameters: 
+2026-08-07 18:19:20.417 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectCount - <==      Total: 1
+2026-08-07 18:19:20.417 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_role
+2026-08-07 18:19:20.420 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==> Parameters: 
+2026-08-07 18:19:20.421 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectCount - <==      Total: 1
+2026-08-07 18:19:20.421 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_menu
+2026-08-07 18:19:20.423 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectCount - ==> Parameters: 
+2026-08-07 18:19:20.423 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectCount - <==      Total: 1
+2026-08-07 18:43:00.031 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m8s184ms791µs200ns).
+2026-08-07 19:38:54.523 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=41m24s305ms307µs800ns).
+2026-08-07 19:39:28.906 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2026-08-07 19:39:28.909 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:39:28.909 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:39:28.913 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:39:28.915 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:39:28.915 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:39:28.916 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:39:28.918 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:39:28.918 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:39:28.920 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:39:28.920 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:39:28.920 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:39:28.923 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:39:28.925 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2026-08-07 19:39:28.968 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user ORDER BY id ASC
+2026-08-07 19:39:28.969 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: 
+2026-08-07 19:39:28.974 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 8
+2026-08-07 19:41:43.329 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/options
+2026-08-07 19:41:43.331 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:41:43.331 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:41:43.334 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:41:43.340 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:41:43.340 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users/options
+2026-08-07 19:41:43.342 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user ORDER BY id ASC
+2026-08-07 19:41:43.342 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: 
+2026-08-07 19:41:43.344 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 8
+2026-08-07 19:42:58.608 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/profile
+2026-08-07 19:42:58.610 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:42:58.610 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:42:58.610 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:42:58.610 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:42:58.610 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:42:58.610 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:42:58.616 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:42:58.616 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:42:58.616 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:42:58.618 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:42:58.618 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:42:58.618 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:42:58.618 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users/profile
+2026-08-07 19:42:58.623 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:42:58.623 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:42:58.623 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:45:25.249 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/profile
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:45:25.251 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:45:25.255 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:45:25.256 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:45:25.256 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:45:25.259 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:45:25.261 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/profile
+2026-08-07 19:45:25.312 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:45:25.312 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:45:25.313 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:45:25.319 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.updateById - ==>  Preparing: UPDATE sys_user SET username=?, password=?, nickname=?, email=?, phone=?, status=?, create_time=?, update_time=?, version=? WHERE id=? AND version=?
+2026-08-07 19:45:25.323 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.updateById - ==> Parameters: admin(String), $2a$10$s9TNg6NhFV31m9NOUzze3.iwlldKIoUS4MkgUXXJyYTsjPAUCaFrW(String), 新昵称(String), new@pes.com(String), 13800000000(String), 1(Integer), 2026-08-07T16:48:17(LocalDateTime), 2026-08-07T19:45:25.319133400(LocalDateTime), 2(Integer), 1(Long), 1(Integer)
+2026-08-07 19:45:25.324 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.updateById - <==    Updates: 1
+2026-08-07 19:45:45.096 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/profile
+2026-08-07 19:45:45.101 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:45:45.101 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:45:45.101 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:45:45.104 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:45:45.105 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:45:45.105 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:45:45.105 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:45:45.105 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:45:45.105 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:45:45.105 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:45:45.105 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:45:45.111 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:45:45.111 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/profile
+2026-08-07 19:45:45.114 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:45:45.114 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:45:45.116 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:45:45.118 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.updateById - ==>  Preparing: UPDATE sys_user SET username=?, password=?, nickname=?, email=?, phone=?, status=?, create_time=?, update_time=?, version=? WHERE id=? AND version=?
+2026-08-07 19:45:45.118 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.updateById - ==> Parameters: admin(String), $2a$10$s9TNg6NhFV31m9NOUzze3.iwlldKIoUS4MkgUXXJyYTsjPAUCaFrW(String), 超级管理员(String), new@pes.com(String), 13800000000(String), 1(Integer), 2026-08-07T16:48:17(LocalDateTime), 2026-08-07T19:45:45.116106900(LocalDateTime), 3(Integer), 1(Long), 2(Integer)
+2026-08-07 19:45:45.120 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.updateById - <==    Updates: 1
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/password
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:46:54.225 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:46:54.233 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:46:54.233 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/password
+2026-08-07 19:46:54.233 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:46:54.239 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:46:54.239 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:46:54.368 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.updateById - ==>  Preparing: UPDATE sys_user SET username=?, password=?, nickname=?, email=?, phone=?, status=?, create_time=?, update_time=?, version=? WHERE id=? AND version=?
+2026-08-07 19:46:54.368 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.updateById - ==> Parameters: admin(String), $2a$10$75.Tpc2CcKc92v2i3yzmeehTA.j6vQpBd2vMsu1AWZ2ZvisG7LvOa(String), 超级管理员(String), new@pes.com(String), 13800000000(String), 1(Integer), 2026-08-07T16:48:17(LocalDateTime), 2026-08-07T19:46:54.368821700(LocalDateTime), 4(Integer), 1(Long), 3(Integer)
+2026-08-07 19:46:54.376 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.updateById - <==    Updates: 1
+2026-08-07 19:47:19.139 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/password
+2026-08-07 19:47:19.141 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:47:19.141 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:47:19.143 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:47:19.144 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:47:19.144 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:47:19.145 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:47:19.146 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:47:19.146 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:47:19.147 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:47:19.148 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:47:19.148 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:47:19.149 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:47:19.149 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/password
+2026-08-07 19:47:19.149 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:47:19.149 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:47:19.149 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:47:19.221 [http-nio-8080-exec-4] WARN  c.p.exception.GlobalExceptionHandler - [业务异常] PUT /users/password — code=400, httpStatus=400, msg=原密码不正确
+2026-08-07 19:47:35.022 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/password
+2026-08-07 19:47:35.026 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:47:35.026 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:47:35.026 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:47:35.028 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:47:35.028 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:47:35.029 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:47:35.029 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:47:35.029 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:47:35.029 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:47:35.030 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:47:35.030 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:47:35.032 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:47:35.032 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/password
+2026-08-07 19:47:35.032 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:47:35.035 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:47:35.035 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:47:35.163 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.updateById - ==>  Preparing: UPDATE sys_user SET username=?, password=?, nickname=?, email=?, phone=?, status=?, create_time=?, update_time=?, version=? WHERE id=? AND version=?
+2026-08-07 19:47:35.164 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.updateById - ==> Parameters: admin(String), $2a$10$l9DLWZY8Ltzdw0e/3ddu6.Y7qxMaM4NypNUVmKoFxMhWDfX6H7Qc.(String), 超级管理员(String), new@pes.com(String), 13800000000(String), 1(Integer), 2026-08-07T16:48:17(LocalDateTime), 2026-08-07T19:47:35.163460100(LocalDateTime), 5(Integer), 1(Long), 4(Integer)
+2026-08-07 19:47:35.167 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.updateById - <==    Updates: 1
+2026-08-07 19:49:15.915 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/1
+2026-08-07 19:49:15.915 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:49:15.917 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:49:15.917 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:49:15.917 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:49:15.917 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:49:15.917 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:49:15.920 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:49:15.920 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:49:15.920 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:49:15.920 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:49:15.920 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:49:15.920 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:49:15.924 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users/1
+2026-08-07 19:49:15.931 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectById - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE id=?
+2026-08-07 19:49:15.931 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:49:15.931 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectById - <==      Total: 1
+2026-08-07 19:49:22.820 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/2
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:49:22.823 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users/2
+2026-08-07 19:49:22.830 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectById - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE id=?
+2026-08-07 19:49:22.830 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectById - ==> Parameters: 2(Long)
+2026-08-07 19:49:22.831 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectById - <==      Total: 1
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /users
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:50:29.989 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:50:29.996 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:50:29.997 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:50:29.998 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:50:29.998 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /users
+2026-08-07 19:50:30.008 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_user WHERE (username = ?)
+2026-08-07 19:50:30.008 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectCount - ==> Parameters: testuser01(String)
+2026-08-07 19:50:30.019 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectCount - <==      Total: 1
+2026-08-07 19:50:30.086 [http-nio-8080-exec-5] DEBUG com.pes.mapper.SysUserMapper.insert - ==>  Preparing: INSERT INTO sys_user ( username, password, nickname, email, phone, status, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2026-08-07 19:50:30.086 [http-nio-8080-exec-5] DEBUG com.pes.mapper.SysUserMapper.insert - ==> Parameters: testuser01(String), $2a$10$wHg10JDb32NDPL2fWtr3i.RZsqCsao3c9RJWyRf7eYeaOdk8Nllo.(String), 测试用户01(String), test01@pes.com(String), 13800000111(String), 1(Integer), 2026-08-07T19:50:30.086101(LocalDateTime), 2026-08-07T19:50:30.086101(LocalDateTime)
+2026-08-07 19:50:30.091 [http-nio-8080-exec-5] DEBUG com.pes.mapper.SysUserMapper.insert - <==    Updates: 1
+2026-08-07 19:52:04.164 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/2
+2026-08-07 19:52:04.164 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-08-07 19:52:24.062 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/2
+2026-08-07 19:52:24.062 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:52:24.062 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:52:24.067 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/2
+2026-08-07 19:52:24.073 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectById - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE id=?
+2026-08-07 19:52:24.073 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectById - ==> Parameters: 2(Long)
+2026-08-07 19:52:24.073 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectById - <==      Total: 1
+2026-08-07 19:52:24.073 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_user WHERE (username = ? AND id <> ?)
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectCount - ==> Parameters: null, 2(Long)
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectCount - <==      Total: 1
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.updateById - ==>  Preparing: UPDATE sys_user SET password=?, nickname=?, email=?, status=?, create_time=?, update_time=?, version=? WHERE id=? AND version=?
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.updateById - ==> Parameters: $2a$10$s9TNg6NhFV31m9NOUzze3.iwlldKIoUS4MkgUXXJyYTsjPAUCaFrW(String), 测试修改用户名(String), updated@pes.com(String), 0(Integer), 2026-08-07T16:48:17(LocalDateTime), 2026-08-07T19:52:24.078500(LocalDateTime), 2(Integer), 2(Long), 1(Integer)
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.updateById - <==    Updates: 1
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserRoleMapper.delete - ==>  Preparing: DELETE FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserRoleMapper.delete - ==> Parameters: 2(Long)
+2026-08-07 19:52:24.078 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserRoleMapper.delete - <==    Updates: 1
+2026-08-07 19:53:52.862 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /users/9
+2026-08-07 19:53:52.862 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:53:52.862 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:53:52.862 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /users/9
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectById - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE id=?
+2026-08-07 19:53:52.866 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectById - ==> Parameters: 9(Long)
+2026-08-07 19:53:52.872 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectById - <==      Total: 0
+2026-08-07 19:53:52.873 [http-nio-8080-exec-1] WARN  c.p.exception.GlobalExceptionHandler - [业务异常] DELETE /users/9 — code=1001, httpStatus=404, msg=用户不存在
+2026-08-07 19:53:59.828 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /users/8
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:53:59.833 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /users/8
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectById - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE id=?
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectById - ==> Parameters: 8(Long)
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectById - <==      Total: 1
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.deleteById - ==>  Preparing: DELETE FROM sys_user WHERE id=?
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.deleteById - ==> Parameters: 8(Long)
+2026-08-07 19:53:59.839 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.deleteById - <==    Updates: 1
+2026-08-07 19:53:59.843 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserRoleMapper.delete - ==>  Preparing: DELETE FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:53:59.843 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserRoleMapper.delete - ==> Parameters: 8(Long)
+2026-08-07 19:53:59.843 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserRoleMapper.delete - <==    Updates: 1
+2026-08-07 19:56:14.226 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-07 19:56:14.229 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:56:14.229 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:56:14.229 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:56:14.229 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:56:14.229 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:56:14.232 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:56:14.232 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:56:14.232 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:56:14.233 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:56:14.233 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:56:14.233 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:56:14.233 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:56:14.233 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-07 19:56:14.237 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-07 19:56:14.237 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-07 19:56:14.237 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles/1
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:57:01.992 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:57:01.999 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:57:01.999 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles/1
+2026-08-07 19:57:01.999 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:57:01.999 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:57:01.999 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:57:53.817 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-07 19:57:53.820 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:57:53.820 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:57:53.820 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:57:53.822 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:57:53.822 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:57:53.822 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:57:53.822 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:57:53.823 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:57:53.823 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:57:53.823 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:57:53.823 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:57:53.825 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:57:53.825 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-07 19:57:53.825 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-07 19:57:53.825 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-07 19:57:53.828 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-07 19:58:17.014 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles
+2026-08-07 19:58:17.019 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:58:17.019 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:58:17.019 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:58:17.019 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:58:17.019 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:58:17.019 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:58:17.021 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:58:17.021 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:58:17.021 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:58:17.021 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:58:17.021 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:58:17.021 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:58:17.021 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles
+2026-08-07 19:58:17.025 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_role WHERE (code = ?)
+2026-08-07 19:58:17.025 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==> Parameters: null
+2026-08-07 19:58:17.027 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectCount - <==      Total: 1
+2026-08-07 19:58:17.027 [http-nio-8080-exec-8] DEBUG com.pes.mapper.SysRoleMapper.insert - ==>  Preparing: INSERT INTO sys_role ( description, status, create_time, update_time ) VALUES ( ?, ?, ?, ? )
+2026-08-07 19:58:17.027 [http-nio-8080-exec-8] DEBUG com.pes.mapper.SysRoleMapper.insert - ==> Parameters: 这是一个测试角色(String), 1(Integer), 2026-08-07T19:58:17.027945900(LocalDateTime), 2026-08-07T19:58:17.027945900(LocalDateTime)
+2026-08-07 19:58:17.169 [http-nio-8080-exec-8] ERROR c.p.exception.GlobalExceptionHandler - [系统异常] POST /roles — DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'name' doesn't have a default value
+### The error may exist in com/pes/mapper/SysRoleMapper.java (best guess)
+### The error may involve com.pes.mapper.SysRoleMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_role  ( description, status, create_time, update_time )  VALUES (  ?, ?, ?, ?  )
+### Cause: java.sql.SQLException: Field 'name' doesn't have a default value
+; Field 'name' doesn't have a default value
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'name' doesn't have a default value
+### The error may exist in com/pes/mapper/SysRoleMapper.java (best guess)
+### The error may involve com.pes.mapper.SysRoleMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_role  ( description, status, create_time, update_time )  VALUES (  ?, ?, ?, ?  )
+### Cause: java.sql.SQLException: Field 'name' doesn't have a default value
+; Field 'name' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:258)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy87.insert(Unknown Source)
+	at com.pes.service.impl.SysRoleServiceImpl.create(SysRoleServiceImpl.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.pes.service.impl.SysRoleServiceImpl$$SpringCGLIB$$0.create(<generated>)
+	at com.pes.controller.RoleController.create(RoleController.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.pes.aspect.PermissionAspect.checkPermission(PermissionAspect.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.pes.controller.RoleController$$SpringCGLIB$$0.create(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.pes.security.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:67)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.sql.SQLException: Field 'name' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at jdk.internal.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy134.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.update(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:106)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 136 common frames omitted
+2026-08-07 19:59:37.846 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles
+2026-08-07 19:59:37.846 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:59:37.846 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:59:37.846 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:59:37.846 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:59:37.853 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles
+2026-08-07 19:59:37.857 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_role WHERE (code = ?)
+2026-08-07 19:59:37.857 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==> Parameters: null
+2026-08-07 19:59:37.857 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectCount - <==      Total: 1
+2026-08-07 19:59:37.860 [http-nio-8080-exec-10] DEBUG com.pes.mapper.SysRoleMapper.insert - ==>  Preparing: INSERT INTO sys_role ( name, description, status, create_time, update_time ) VALUES ( ?, ?, ?, ?, ? )
+2026-08-07 19:59:37.860 [http-nio-8080-exec-10] DEBUG com.pes.mapper.SysRoleMapper.insert - ==> Parameters: 测试角色(String), 这是一个测试角色(String), 1(Integer), 2026-08-07T19:59:37.860041500(LocalDateTime), 2026-08-07T19:59:37.860041500(LocalDateTime)
+2026-08-07 19:59:37.860 [http-nio-8080-exec-10] ERROR c.p.exception.GlobalExceptionHandler - [系统异常] POST /roles — DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'code' doesn't have a default value
+### The error may exist in com/pes/mapper/SysRoleMapper.java (best guess)
+### The error may involve com.pes.mapper.SysRoleMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_role  ( name,  description, status, create_time, update_time )  VALUES (  ?,  ?, ?, ?, ?  )
+### Cause: java.sql.SQLException: Field 'code' doesn't have a default value
+; Field 'code' doesn't have a default value
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'code' doesn't have a default value
+### The error may exist in com/pes/mapper/SysRoleMapper.java (best guess)
+### The error may involve com.pes.mapper.SysRoleMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_role  ( name,  description, status, create_time, update_time )  VALUES (  ?,  ?, ?, ?, ?  )
+### Cause: java.sql.SQLException: Field 'code' doesn't have a default value
+; Field 'code' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:258)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy80.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at jdk.proxy2/jdk.proxy2.$Proxy87.insert(Unknown Source)
+	at com.pes.service.impl.SysRoleServiceImpl.create(SysRoleServiceImpl.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.pes.service.impl.SysRoleServiceImpl$$SpringCGLIB$$0.create(<generated>)
+	at com.pes.controller.RoleController.create(RoleController.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.pes.aspect.PermissionAspect.checkPermission(PermissionAspect.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.pes.controller.RoleController$$SpringCGLIB$$0.create(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.pes.security.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:67)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.sql.SQLException: Field 'code' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at jdk.internal.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy134.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.update(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:106)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 136 common frames omitted
+2026-08-07 19:59:50.102 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 19:59:50.104 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 19:59:50.110 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 19:59:50.110 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles
+2026-08-07 19:59:50.112 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_role WHERE (code = ?)
+2026-08-07 19:59:50.112 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==> Parameters: test_role(String)
+2026-08-07 19:59:50.112 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectCount - <==      Total: 1
+2026-08-07 19:59:50.114 [http-nio-8080-exec-2] DEBUG com.pes.mapper.SysRoleMapper.insert - ==>  Preparing: INSERT INTO sys_role ( name, code, description, status, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+2026-08-07 19:59:50.114 [http-nio-8080-exec-2] DEBUG com.pes.mapper.SysRoleMapper.insert - ==> Parameters: 测试角色(String), test_role(String), 这是一个测试角色(String), 1(Integer), 2026-08-07T19:59:50.114719200(LocalDateTime), 2026-08-07T19:59:50.114719200(LocalDateTime)
+2026-08-07 19:59:50.114 [http-nio-8080-exec-2] DEBUG com.pes.mapper.SysRoleMapper.insert - <==    Updates: 1
+2026-08-07 20:00:13.607 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-07 20:00:13.609 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 20:00:13.609 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 20:00:13.611 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 20:00:13.612 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 20:00:13.612 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 20:00:13.612 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 20:00:13.614 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 20:00:13.614 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 20:00:13.614 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 20:00:13.614 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 20:00:13.614 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 20:00:13.614 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 20:00:13.617 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-07 20:00:13.617 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-07 20:00:13.617 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-07 20:00:13.617 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 6
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /roles/6
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 20:00:56.274 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /roles/6
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 6(Long)
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_role WHERE (code = ? AND id <> ?)
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==> Parameters: null, 6(Long)
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectCount - <==      Total: 1
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.updateById - ==>  Preparing: UPDATE sys_role SET description=?, status=?, update_time=? WHERE id=?
+2026-08-07 20:00:56.284 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.updateById - ==> Parameters: 修改后的描述(String), 1(Integer), 2026-08-07T20:00:56.284242100(LocalDateTime), 6(Long)
+2026-08-07 20:00:56.290 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.updateById - <==    Updates: 1
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /roles/6
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 20:01:37.234 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 20:01:37.239 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 20:01:37.239 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 20:01:37.239 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 20:01:37.239 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 20:01:37.241 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /roles/6
+2026-08-07 20:01:37.241 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 20:01:37.241 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 6(Long)
+2026-08-07 20:01:37.241 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 20:01:37.241 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.deleteById - ==>  Preparing: DELETE FROM sys_role WHERE id=?
+2026-08-07 20:01:37.241 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.deleteById - ==> Parameters: 6(Long)
+2026-08-07 20:01:37.241 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.deleteById - <==    Updates: 1
+2026-08-07 20:01:37.246 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==>  Preparing: DELETE FROM sys_role_menu WHERE (role_id = ?)
+2026-08-07 20:01:37.246 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==> Parameters: 6(Long)
+2026-08-07 20:01:37.246 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMenuMapper.delete - <==    Updates: 0
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles/5/assign
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-07 20:03:00.923 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles/5/assign
+2026-08-07 20:03:00.933 [http-nio-8080-exec-8] WARN  c.p.exception.GlobalExceptionHandler - [权限不足] POST /roles/5/assign — 权限不足
+2026-08-07 20:06:48.682 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-07 20:06:48.684 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-07 20:06:51.229 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-07 20:06:51.261 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 30888 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-07 20:06:51.261 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-07 20:06:51.262 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-07 20:06:51.802 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-07 20:06:51.803 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-07 20:06:51.829 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-08-07 20:06:52.403 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-07 20:06:52.410 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:06:52.411 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-07 20:06:52.411 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-07 20:06:52.466 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-07 20:06:52.467 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1172 ms
+2026-08-07 20:06:52.602 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-07 20:06:52.902 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e8d9bb6
+2026-08-07 20:06:52.905 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-07 20:06:53.185 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-07 20:06:53.783 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-07 20:06:54.123 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20a46227, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@669469c9, org.springframework.security.web.context.SecurityContextHolderFilter@3f2169e9, org.springframework.security.web.header.HeaderWriterFilter@54f4734e, org.springframework.web.filter.CorsFilter@54234569, com.pes.security.filter.JwtAuthenticationFilter@4c8d45cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b9615cb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1aea759d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f39ad3f, org.springframework.security.web.session.SessionManagementFilter@5ab06829, org.springframework.security.web.access.ExceptionTranslationFilter@2a317af7, org.springframework.security.web.access.intercept.AuthorizationFilter@8d23cd8]
+2026-08-07 20:06:54.369 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:06:54.380 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-07 20:06:54.385 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.603 seconds (process running for 4.291)
+2026-08-07 20:06:58.708 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-07 20:06:58.708 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-07 20:06:58.708 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-08-07 20:06:58.719 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles/5/assign
+2026-08-07 20:06:58.853 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-07 20:06:58.870 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-07 20:06:58.886 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-07 20:06:58.891 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-07 20:06:58.896 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 0
+2026-08-07 20:06:58.909 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles/5/assign
+2026-08-07 20:06:58.967 [http-nio-8080-exec-3] WARN  c.p.exception.GlobalExceptionHandler - [权限不足] POST /roles/5/assign — 权限不足
+2026-08-07 20:09:41.326 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-07 20:09:41.330 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-07 20:09:43.430 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-07 20:09:43.459 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 27948 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-07 20:09:43.459 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-07 20:09:43.460 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-07 20:09:43.991 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-07 20:09:43.992 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-07 20:09:44.018 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-08-07 20:09:44.620 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-07 20:09:44.630 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:09:44.632 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-07 20:09:44.632 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-07 20:09:44.687 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-07 20:09:44.688 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1196 ms
+2026-08-07 20:09:44.824 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-07 20:09:45.036 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@550fa96f
+2026-08-07 20:09:45.037 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-07 20:09:45.265 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-07 20:09:45.824 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-07 20:09:46.162 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1edf52e6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ab06829, org.springframework.security.web.context.SecurityContextHolderFilter@7b38db21, org.springframework.security.web.header.HeaderWriterFilter@76c85485, org.springframework.web.filter.CorsFilter@50f3ba6a, com.pes.security.filter.JwtAuthenticationFilter@7742a276, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a26eee6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4be1c797, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6075a4ea, org.springframework.security.web.session.SessionManagementFilter@26c1244c, org.springframework.security.web.access.ExceptionTranslationFilter@c247b02, org.springframework.security.web.access.intercept.AuthorizationFilter@6cfac0bd]
+2026-08-07 20:09:46.406 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:09:46.417 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-07 20:09:46.422 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.365 seconds (process running for 3.955)
+2026-08-07 20:10:35.449 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-07 20:10:35.453 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-07 20:11:06.077 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-07 20:11:06.109 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 1620 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-07 20:11:06.110 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-07 20:11:06.110 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-07 20:11:06.717 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-07 20:11:06.719 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-07 20:11:06.750 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-08-07 20:11:07.358 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-07 20:11:07.364 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:11:07.365 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-07 20:11:07.365 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-07 20:11:07.413 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-07 20:11:07.413 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1270 ms
+2026-08-07 20:11:07.539 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-07 20:11:07.760 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@778113f2
+2026-08-07 20:11:07.762 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-07 20:11:08.000 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-07 20:11:08.567 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-07 20:11:08.923 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e149395, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19bbb216, org.springframework.security.web.context.SecurityContextHolderFilter@2dbf8cfc, org.springframework.security.web.header.HeaderWriterFilter@ecfff32, org.springframework.web.filter.CorsFilter@2e426dd2, com.pes.security.filter.JwtAuthenticationFilter@65d90b7f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e76134d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a317af7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cfac0bd, org.springframework.security.web.session.SessionManagementFilter@127320df, org.springframework.security.web.access.ExceptionTranslationFilter@7f09ff10, org.springframework.security.web.access.intercept.AuthorizationFilter@25da1dc9]
+2026-08-07 20:11:09.180 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:11:09.190 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-07 20:11:09.196 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.577 seconds (process running for 4.165)
+2026-08-07 20:12:27.151 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-07 20:12:27.151 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-07 20:12:27.151 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-08-07 20:12:27.161 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /captcha
+2026-08-07 20:12:27.172 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-08-07 20:12:27.183 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /captcha
+2026-08-07 20:13:19.312 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-07 20:13:19.318 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-07 20:13:21.983 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-07 20:13:22.023 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 7748 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-07 20:13:22.023 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-07 20:13:22.024 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-07 20:13:22.689 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-07 20:13:22.690 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-07 20:13:22.722 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-08-07 20:13:23.345 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-07 20:13:23.353 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:13:23.355 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-07 20:13:23.355 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-07 20:13:23.412 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-07 20:13:23.414 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1349 ms
+2026-08-07 20:13:23.560 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-07 20:13:23.768 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74bbc273
+2026-08-07 20:13:23.770 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-07 20:13:24.011 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-07 20:13:24.644 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-07 20:13:25.015 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a26eee6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4be1c797, org.springframework.security.web.context.SecurityContextHolderFilter@2eafb4e7, org.springframework.security.web.header.HeaderWriterFilter@109188b4, org.springframework.web.filter.CorsFilter@4e5d5ac1, com.pes.security.filter.JwtAuthenticationFilter@3de88f64, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18d14de3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@469bd719, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76bdfc19, org.springframework.security.web.session.SessionManagementFilter@4a7ac98b, org.springframework.security.web.access.ExceptionTranslationFilter@7983a5d5, org.springframework.security.web.access.intercept.AuthorizationFilter@7b38db21]
+2026-08-07 20:13:25.269 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:13:25.284 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-07 20:13:25.291 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.893 seconds (process running for 4.713)
+2026-08-07 20:18:07.004 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-07 20:18:07.004 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-07 20:18:07.005 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-07 20:18:07.011 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /captcha
+2026-08-07 20:18:07.017 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-08-07 20:18:07.025 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /captcha
+2026-08-07 20:19:43.149 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-07 20:19:43.154 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-07 20:19:45.340 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-07 20:19:45.373 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 29724 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-07 20:19:45.374 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-07 20:19:45.375 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-07 20:19:45.928 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-07 20:19:45.930 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-07 20:19:45.959 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2026-08-07 20:19:46.599 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-07 20:19:46.606 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:19:46.608 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-07 20:19:46.608 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-07 20:19:46.663 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-07 20:19:46.664 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1251 ms
+2026-08-07 20:19:46.821 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-07 20:19:47.038 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7752c0e7
+2026-08-07 20:19:47.039 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-07 20:19:47.340 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-07 20:19:47.985 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-07 20:19:48.347 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7891742e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bbaf983, org.springframework.security.web.context.SecurityContextHolderFilter@3976910, org.springframework.security.web.header.HeaderWriterFilter@579ee82, org.springframework.web.filter.CorsFilter@2ec0ca83, com.pes.security.filter.JwtAuthenticationFilter@3cb04dd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19bbb216, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6cfac0bd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@781bd9dd, org.springframework.security.web.session.SessionManagementFilter@25890ce3, org.springframework.security.web.access.ExceptionTranslationFilter@f6e3b67, org.springframework.security.web.access.intercept.AuthorizationFilter@1e49a77e]
+2026-08-07 20:19:48.606 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-07 20:19:48.618 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-07 20:19:48.624 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.704 seconds (process running for 4.366)
+2026-08-07 20:19:50.813 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-07 20:19:50.813 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-07 20:19:50.814 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-08-07 20:19:50.821 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /captcha
+2026-08-07 20:19:50.828 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-08-07 20:19:50.834 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /captcha
+2026-08-07 20:19:53.487 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /captcha
+2026-08-07 20:19:53.488 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-08-07 20:19:53.489 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /captcha
