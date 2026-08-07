@@ -134,9 +134,14 @@ const loadRoles = async () => {
   }
 }
 
+// 弹窗关闭（X / ESC / 遮罩 / 取消）时同步父级 showFormModal，
+// 避免父级状态一直为 true，导致再次点击新增/编辑不重新渲染弹窗
+watch(visible, (val) => {
+  if (!val) emit('close')
+})
+
 const handleCancel = () => {
   visible.value = false
-  emit('close')
 }
 
 const handleSubmit = async () => {

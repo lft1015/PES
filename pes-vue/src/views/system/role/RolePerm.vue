@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { getMenuTree } from '@/api/menu'
 import { assignMenu } from '@/api/role'
 import { ElMessage } from 'element-plus'
@@ -48,9 +48,14 @@ const loadMenuTree = async () => {
   }
 }
 
+// 弹窗关闭（X / ESC / 遮罩 / 取消）时同步父级 showAssignModal，
+// 避免父级状态一直为 true，导致再次点击分配权限不重新渲染弹窗
+watch(visible, (val) => {
+  if (!val) emit('close')
+})
+
 const handleCancel = () => {
   visible.value = false
-  emit('close')
 }
 
 const handleSubmit = async () => {
