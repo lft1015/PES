@@ -46,4 +46,12 @@ public class SysUser {
     /** 乐观锁版本号 */
     @Version
     private Integer version;
+
+    /** 角色 ID（非表字段，用于列表展示，一个用户一个角色） */
+    @TableField(exist = false)
+    private Long roleId;
+
+    /** 角色名称（非表字段，用于列表展示） */
+    @TableField(exist = false)
+    private String roleName;
 }

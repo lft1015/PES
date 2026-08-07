@@ -64,6 +64,7 @@ public class PermissionAspect {
                 .collect(Collectors.toSet());
 
         // 比对所需权限是否在用户权限集合中，不存在则抛出异常
+        // 权限完全由分配的角色-菜单决定，不针对任何角色做硬编码放行
         if (!permissions.contains(requiredPerm)) {
             throw new AccessDeniedException("权限不足");
         }

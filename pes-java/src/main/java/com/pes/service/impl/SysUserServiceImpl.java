@@ -1,10 +1,12 @@
 package com.pes.service.impl;
 
 import com.pes.dto.request.UserCreateReq;
+import com.pes.entity.SysRole;
 import com.pes.entity.SysUser;
 import com.pes.entity.SysUserRole;
 import com.pes.exception.BusinessException;
 import com.pes.exception.ErrorCode;
+import com.pes.mapper.SysRoleMapper;
 import com.pes.mapper.SysUserMapper;
 import com.pes.mapper.SysUserRoleMapper;
 import com.pes.service.SysUserService;
@@ -19,20 +21,25 @@ import java.util.List;
 /**
  * 用户服务实现
  * 继承 MyBatis-Plus ServiceImpl，提供用户的 CRUD 及个人信息管理
+ * 业务规则：一个用户对应一个角色
  */
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
     /** 用户-角色关联 Mapper */
     private final SysUserRoleMapper sysUserRoleMapper;
+    /** 角色 Mapper（用于列表展示角色名称） */
+    private final SysRoleMapper sysRoleMapper;
     /** 密码编码器 */
     private final PasswordEncoder passwordEncoder;
 
     /**
      * 构造器注入
      */
-    public SysUserServiceImpl(SysUserRoleMapper sysUserRoleMapper, PasswordEncoder passwordEncoder) {
+    public SysUserServiceImpl(SysUserRoleMapper sysUserRoleMapper, SysRoleMapper sysRoleMapper,
+                              PasswordEncoder passwordEncoder) {
         this.sysUserRoleMapper = sysUserRoleMapper;
+        this.sysRoleMapper = sysRoleMapper;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -44,7 +51,22 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
               .or().like(SysUser::getNickname, keyword);
         }
         qw.orderByAsc(SysUser::getId);
-        return baseMapper.selectList(qw);
+        List<SysUser> users = baseMapper.selectList(qw);
+
+        // 填充每个用户的角色信息（一个用户一个角色）
+        for (SysUser user : users) {
+            SysUserRole userRole = sysUserRoleMapper.selectOne(new LambdaQueryWrapper<SysUserRole>()
+                    .eq(SysUserRole::getUserId, user.getId())
+                    .last("LIMIT 1"));
+            if (userRole != null) {
+                SysRole role = sysRoleMapper.selectById(userRole.getRoleId());
+                if (role != null) {
+                    user.setRoleId(role.getId());
+                    user.setRoleName(role.getName());
+                }
+            }
+        }
+        return users;
     }
 
     /**
@@ -66,13 +88,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         user.setStatus(req.getStatus() != null ? req.getStatus() : 1);
         baseMapper.insert(user);
 
-        if (req.getRoleIds() != null) {
-            for (Long roleId : req.getRoleIds()) {
-                SysUserRole userRole = new SysUserRole();
-                userRole.setUserId(user.getId());
-                userRole.setRoleId(roleId);
-                sysUserRoleMapper.insert(userRole);
-            }
+        if (req.getRoleId() != null) {
+            SysUserRole userRole = new SysUserRole();
+            userRole.setUserId(user.getId());
+            userRole.setRoleId(req.getRoleId());
+            sysUserRoleMapper.insert(userRole);
         }
 
         return user;
@@ -108,14 +128,14 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         }
         baseMapper.updateById(user);
 
-        sysUserRoleMapper.delete(new LambdaQueryWrapper<SysUserRole>().eq(SysUserRole::getUserId, id));
-        if (req.getRoleIds() != null) {
-            for (Long roleId : req.getRoleIds()) {
-                SysUserRole userRole = new SysUserRole();
-                userRole.setUserId(id);
-                userRole.setRoleId(roleId);
-                sysUserRoleMapper.insert(userRole);
-            }
+        // 仅当显式传入 roleId 时才更新角色分配（先删旧角色，再插入新角色，一个用户一个角色）；
+        // 否则保留原有角色关联，避免前端表单未携带角色字段时误删用户全部角色导致权限丢失
+        if (req.getRoleId() != null) {
+            sysUserRoleMapper.delete(new LambdaQueryWrapper<SysUserRole>().eq(SysUserRole::getUserId, id));
+            SysUserRole userRole = new SysUserRole();
+            userRole.setUserId(id);
+            userRole.setRoleId(req.getRoleId());
+            sysUserRoleMapper.insert(userRole);
         }
 
         return user;
@@ -142,6 +162,14 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             throw new BusinessException(ErrorCode.USER_NOT_FOUND);
         }
         return user;
+    }
+
+    @Override
+    public Long getRoleId(Long userId) {
+        SysUserRole userRole = sysUserRoleMapper.selectOne(new LambdaQueryWrapper<SysUserRole>()
+                .eq(SysUserRole::getUserId, userId)
+                .last("LIMIT 1"));
+        return userRole != null ? userRole.getRoleId() : null;
     }
 
     @Override

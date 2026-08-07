@@ -53,6 +53,14 @@ public interface SysUserService extends IService<SysUser> {
     SysUser getByUsername(String username);
 
     /**
+     * 查询用户分配的角色 ID（一个用户一个角色）
+     *
+     * @param userId 用户 ID
+     * @return 角色 ID，无则返回 null
+     */
+    Long getRoleId(Long userId);
+
+    /**
      * 更新用户个人信息（昵称、邮箱、手机号）
      *
      * @param username 用户名

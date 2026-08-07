@@ -44,6 +44,12 @@
           <el-table-column prop="phone" label="手机号" min-width="120" align="center">
             <template #default="{ row }">{{ row.phone || '-' }}</template>
           </el-table-column>
+          <el-table-column prop="roleName" label="角色" min-width="100" align="center">
+            <template #default="{ row }">
+              <el-tag v-if="row.roleName" size="small" effect="plain">{{ row.roleName }}</el-tag>
+              <span v-else>-</span>
+            </template>
+          </el-table-column>
           <el-table-column prop="status" label="状态" min-width="80" align="center">
             <template #default="scope">
               <el-tag :type="scope.row.status === 1 ? 'success' : 'danger'">
@@ -93,7 +99,7 @@
 <script setup>
 import { ref, reactive, computed, watch, onMounted } from 'vue'
 import { getUserList, deleteUser } from '@/api/user'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { User, Search, Refresh, Plus, Edit, Delete } from '@element-plus/icons-vue'
 import UserForm from './UserForm.vue'
 
@@ -133,10 +139,17 @@ const handleFormSuccess = () => { closeFormModal(); loadData() }
 
 const handleDelete = async (id) => {
   try {
+    await ElMessageBox.confirm('确定要删除该用户吗？删除后不可恢复！', '警告', { type: 'warning' })
+  } catch {
+    return // 用户取消
+  }
+  try {
     await deleteUser(id)
     ElMessage.success('删除成功')
     loadData()
-  } catch { ElMessage.error('删除失败') }
+  } catch {
+    ElMessage.error('删除失败')
+  }
 }
 
 let searchTimer = null

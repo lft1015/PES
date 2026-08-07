@@ -44,15 +44,20 @@ public class UserController {
     }
 
     /**
-     * 根据 ID 查询用户详情
+     * 根据 ID 查询用户详情（含分配的角色 ID，用于编辑回显，一个用户一个角色）
      *
      * @param id 用户 ID
-     * @return 用户实体
+     * @return { user: 用户信息, roleId: 角色 ID }
      */
     @GetMapping("/{id}")
     @RequirePermission("user:view")
-    public Result<SysUser> getById(@PathVariable Long id) {
-        return Result.ok(sysUserService.getById(id));
+    public Result<Map<String, Object>> getById(@PathVariable Long id) {
+        SysUser user = sysUserService.getById(id);
+        user.setPassword(null);
+        Map<String, Object> data = new java.util.HashMap<>();
+        data.put("user", user);
+        data.put("roleId", sysUserService.getRoleId(id));
+        return Result.ok(data);
     }
 
     /**

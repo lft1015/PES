@@ -4,8 +4,6 @@ package com.pes.dto.request;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-import java.util.List;
-
 /**
  * 用户创建/修改请求 DTO
  */
@@ -32,6 +30,6 @@ public class UserCreateReq {
     /** 状态：1-启用，0-禁用 */
     private Integer status;
 
-    /** 角色 ID 列表 */
-    private List<Long> roleIds;
+    /** 角色 ID（一个用户对应一个角色） */
+    private Long roleId;
 }

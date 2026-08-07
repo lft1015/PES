@@ -43,7 +43,7 @@ export const getUserById = (id) => {
 
 /**
  * 新增用户
- * @param {Object} data - 用户数据 { username, password, nickname, email, phone, roleIds }
+ * @param {Object} data - 用户数据 { username, password, nickname, email, phone, roleId }
  * @returns {Promise}
  */
 export const createUser = (data) => {

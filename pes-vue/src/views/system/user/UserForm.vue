@@ -27,17 +27,33 @@
           <el-option label="禁用" :value="0" />
         </el-select>
       </el-form-item>
+      <el-form-item label="角色" prop="roleId">
+        <el-select
+          v-model="form.roleId"
+          placeholder="请选择角色"
+          style="width: 100%"
+          :loading="roleLoading"
+        >
+          <el-option
+            v-for="role in roleOptions"
+            :key="role.id"
+            :label="role.name"
+            :value="role.id"
+          />
+        </el-select>
+      </el-form-item>
     </el-form>
     <template #footer>
       <el-button @click="handleCancel">取消</el-button>
-      <el-button type="primary" @click="handleSubmit">确定</el-button>
+      <el-button type="primary" @click="handleSubmit" :loading="submitLoading">确定</el-button>
     </template>
   </el-dialog>
 </template>
 
 <script setup>
-import { ref, reactive, watch } from 'vue'
+import { ref, reactive, watch, onMounted } from 'vue'
 import { createUser, updateUser } from '@/api/user'
+import { getRoleList } from '@/api/role'
 import { ElMessage } from 'element-plus'
 
 const props = defineProps({
@@ -51,6 +67,10 @@ const emit = defineEmits(['close', 'success'])
 
 const visible = ref(true)
 const formRef = ref()
+/** 角色下拉选项 */
+const roleOptions = ref([])
+const roleLoading = ref(false)
+const submitLoading = ref(false)
 
 const form = reactive({
   username: '',
@@ -58,7 +78,8 @@ const form = reactive({
   nickname: '',
   email: '',
   phone: '',
-  status: 1
+  status: 1,
+  roleId: null
 })
 
 const rules = {
@@ -73,18 +94,45 @@ const rules = {
   ],
   status: [
     { required: true, message: '请选择状态', trigger: 'change' }
+  ],
+  roleId: [
+    { required: true, message: '请选择角色', trigger: 'change' }
   ]
 }
 
 watch(() => props.editData, (val) => {
   if (val) {
+    // 编辑：回填基本信息与角色（列表数据已包含 roleId，一个用户一个角色）
     form.username = val.username
     form.nickname = val.nickname
     form.email = val.email
     form.phone = val.phone
     form.status = val.status
+    form.roleId = val.roleId != null ? val.roleId : null
+  } else {
+    // 新增：重置表单
+    form.username = ''
+    form.password = ''
+    form.nickname = ''
+    form.email = ''
+    form.phone = ''
+    form.status = 1
+    form.roleId = null
   }
 }, { immediate: true })
+
+/** 加载全部角色供下拉选择 */
+const loadRoles = async () => {
+  roleLoading.value = true
+  try {
+    const res = await getRoleList()
+    roleOptions.value = Array.isArray(res) ? res : []
+  } catch {
+    roleOptions.value = []
+  } finally {
+    roleLoading.value = false
+  }
+}
 
 const handleCancel = () => {
   visible.value = false
@@ -94,16 +142,32 @@ const handleCancel = () => {
 const handleSubmit = async () => {
   try {
     await formRef.value.validate()
+  } catch {
+    return // 校验失败，不提交
+  }
+
+  submitLoading.value = true
+  try {
+    const payload = { ...form }
     if (props.editData) {
-      await updateUser(props.editData.id, form)
+      // 编辑模式：密码留空则不改密码
+      if (!payload.password) delete payload.password
+    }
+    if (props.editData) {
+      await updateUser(props.editData.id, payload)
       ElMessage.success('更新成功')
     } else {
-      await createUser(form)
+      await createUser(payload)
       ElMessage.success('创建成功')
     }
     emit('success')
   } catch (error) {
     ElMessage.error('操作失败')
+  } finally {
+    submitLoading.value = false
   }
 }
+
+// 挂载时加载角色下拉选项
+onMounted(() => { loadRoles() })
 </script>
