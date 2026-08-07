@@ -15,6 +15,8 @@
     <description>PES Backend System</description>
     <properties>
         <java.version>17</java.version>
+        <!-- 编译时保留方法参数名，Spring MVC 才能解析 @PathVariable/@RequestParam 等不带名称的注解 -->
+        <maven.compiler.parameters>true</maven.compiler.parameters>
     </properties>
     <dependencies>
         <dependency>
@@ -91,6 +93,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- 显式开启 -parameters，确保参数名信息写入 class 文件（Spring 6 不再从字节码推断） -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <parameters>true</parameters>
+                </configuration>
             </plugin>
         </plugins>
     </build>
