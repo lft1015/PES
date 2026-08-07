@@ -76,6 +76,8 @@ public class SecurityConfig {
         http
             // 禁用 CSRF（前后端分离，基于 Token 认证）
             .csrf(AbstractHttpConfigurer::disable)
+            // 禁用 Spring Security 默认登出机制，使用自定义 AuthController.logout()
+            .logout(AbstractHttpConfigurer::disable)
             // 无状态会话，不创建 Session
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             // 请求授权规则
