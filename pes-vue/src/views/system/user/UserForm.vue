@@ -92,6 +92,12 @@ const rules = {
   nickname: [
     { required: true, message: '请输入昵称', trigger: 'blur' }
   ],
+  email: [
+    { pattern: /^[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}$/, message: '请输入正确的邮箱地址', trigger: 'blur' }
+  ],
+  phone: [
+    { pattern: /^1[3-9]\d{9}$/, message: '请输入正确的手机号', trigger: 'blur' }
+  ],
   status: [
     { required: true, message: '请选择状态', trigger: 'change' }
   ],
