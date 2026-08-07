@@ -60,7 +60,7 @@ public class MenuController {
      */
     @GetMapping("/{id}")
     @RequirePermission("menu:view")
-    public Result<SysMenu> getById(@PathVariable Long id) {
+    public Result<SysMenu> getById(@PathVariable("id") Long id) {
         return Result.ok(sysMenuService.getById(id));
     }
 
@@ -85,7 +85,7 @@ public class MenuController {
      */
     @PutMapping("/{id}")
     @RequirePermission("menu:edit")
-    public Result<SysMenu> update(@PathVariable Long id, @RequestBody SysMenu menu) {
+    public Result<SysMenu> update(@PathVariable("id") Long id, @RequestBody SysMenu menu) {
         return Result.ok(sysMenuService.update(id, menu));
     }
 
@@ -97,7 +97,7 @@ public class MenuController {
      */
     @DeleteMapping("/{id}")
     @RequirePermission("menu:delete")
-    public Result<Void> delete(@PathVariable Long id) {
+    public Result<Void> delete(@PathVariable("id") Long id) {
         sysMenuService.delete(id);
         return Result.ok();
     }

@@ -65,7 +65,7 @@ public class LogController {
      */
     @DeleteMapping("/operation/{id}")
     @RequirePermission("log:delete")
-    public Result<Void> deleteOperLog(@PathVariable Long id) {
+    public Result<Void> deleteOperLog(@PathVariable("id") Long id) {
         sysOperLogService.removeById(id);
         return Result.ok();
     }
@@ -119,7 +119,7 @@ public class LogController {
      */
     @DeleteMapping("/login/{id}")
     @RequirePermission("log:delete")
-    public Result<Void> deleteLoginLog(@PathVariable Long id) {
+    public Result<Void> deleteLoginLog(@PathVariable("id") Long id) {
         sysLoginLogService.removeById(id);
         return Result.ok();
     }

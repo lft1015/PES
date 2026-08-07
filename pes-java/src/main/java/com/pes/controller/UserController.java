@@ -51,7 +51,7 @@ public class UserController {
      */
     @GetMapping("/{id}")
     @RequirePermission("user:view")
-    public Result<Map<String, Object>> getById(@PathVariable Long id) {
+    public Result<Map<String, Object>> getById(@PathVariable("id") Long id) {
         SysUser user = sysUserService.getById(id);
         user.setPassword(null);
         Map<String, Object> data = new java.util.HashMap<>();
@@ -81,7 +81,7 @@ public class UserController {
      */
     @PutMapping("/{id}")
     @RequirePermission("user:edit")
-    public Result<SysUser> update(@PathVariable Long id, @RequestBody UserCreateReq req) {
+    public Result<SysUser> update(@PathVariable("id") Long id, @RequestBody UserCreateReq req) {
         return Result.ok(sysUserService.update(id, req));
     }
 
@@ -93,7 +93,7 @@ public class UserController {
      */
     @DeleteMapping("/{id}")
     @RequirePermission("user:delete")
-    public Result<Void> delete(@PathVariable Long id) {
+    public Result<Void> delete(@PathVariable("id") Long id) {
         sysUserService.delete(id);
         return Result.ok();
     }

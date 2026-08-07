@@ -48,7 +48,7 @@ public class RoleController {
      */
     @GetMapping("/{id}")
     @RequirePermission("role:view")
-    public Result<SysRole> getById(@PathVariable Long id) {
+    public Result<SysRole> getById(@PathVariable("id") Long id) {
         return Result.ok(sysRoleService.getById(id));
     }
 
@@ -73,7 +73,7 @@ public class RoleController {
      */
     @PutMapping("/{id}")
     @RequirePermission("role:edit")
-    public Result<SysRole> update(@PathVariable Long id, @RequestBody SysRole role) {
+    public Result<SysRole> update(@PathVariable("id") Long id, @RequestBody SysRole role) {
         return Result.ok(sysRoleService.update(id, role));
     }
 
@@ -85,7 +85,7 @@ public class RoleController {
      */
     @DeleteMapping("/{id}")
     @RequirePermission("role:delete")
-    public Result<Void> delete(@PathVariable Long id) {
+    public Result<Void> delete(@PathVariable("id") Long id) {
         sysRoleService.delete(id);
         return Result.ok();
     }
@@ -99,7 +99,7 @@ public class RoleController {
      */
     @PostMapping("/{roleId}/assign")
     @RequirePermission("role:assign")
-    public Result<Void> assignMenu(@PathVariable Long roleId, @RequestBody RoleAssignReq req) {
+    public Result<Void> assignMenu(@PathVariable("roleId") Long roleId, @RequestBody RoleAssignReq req) {
         sysRoleService.assignMenu(roleId, req.getMenuIds());
         return Result.ok();
     }
