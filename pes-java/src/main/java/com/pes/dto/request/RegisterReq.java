@@ -30,8 +30,10 @@ public class RegisterReq {
     private String phone;
 
     /** 验证码 */
+    @NotBlank(message = "验证码不能为空")
     private String captcha;
 
     /** 验证码唯一标识 */
+    @NotBlank(message = "验证码标识不能为空")
     private String captchaKey;
 }

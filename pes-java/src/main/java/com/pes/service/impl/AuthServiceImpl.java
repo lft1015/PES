@@ -191,11 +191,9 @@ public class AuthServiceImpl implements AuthService {
      */
     @Override
     public void register(RegisterReq req) {
-        if (req.getCaptchaKey() != null && !req.getCaptchaKey().isEmpty()) {
-            String storedCaptcha = captchaStore.getAndRemove("captcha:" + req.getCaptchaKey());
-            if (storedCaptcha == null || !storedCaptcha.equalsIgnoreCase(req.getCaptcha())) {
-                throw new BusinessException(ErrorCode.CAPTCHA_ERROR);
-            }
+        String storedCaptcha = captchaStore.getAndRemove("captcha:" + req.getCaptchaKey());
+        if (storedCaptcha == null || !storedCaptcha.equalsIgnoreCase(req.getCaptcha())) {
+            throw new BusinessException(ErrorCode.CAPTCHA_ERROR);
         }
 
         SysUser existingUser = sysUserMapper.selectOne(new LambdaQueryWrapper<SysUser>()

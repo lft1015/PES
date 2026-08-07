@@ -12,7 +12,7 @@ import request from './request'
 
 /**
  * 获取验证码
- * GET /captcha → { key: "uuid", image: "data:image/png;base64,..." }
+ * GET /captcha
  *
  * @returns {Promise<{key: string, image: string}>} key 登录时回传，image 是 base64 可直接用于 <img src>
  */

@@ -28,7 +28,7 @@ public class AuthController {
 
     /**
      * 获取验证码
-     * GET /captcha → { code: 200, msg: "success", data: { key: "uuid", image: "data:image/gif;base64,..." } }
+     * GET /captcha
      */
     @GetMapping("/captcha")
     public Result<CaptchaResp> captcha() {
@@ -38,7 +38,7 @@ public class AuthController {
 
     /**
      * 用户登录
-     * POST /login → { code: 200, msg: "success", data: { token, username, ... } }
+     * POST /login
      */
     @PostMapping("/login")
     public Result<LoginResp> login(@Valid @RequestBody LoginReq req) {
