@@ -3,6 +3,7 @@ package com.pes.aspect;
 import com.pes.annotation.LogOperation;
 import com.pes.entity.SysOperLog;
 import com.pes.service.SysOperLogService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -37,14 +38,11 @@ public class LogAspect {
      * 操作日志服务，用于将日志记录持久化到数据库
      */
     private final SysOperLogService sysOperLogService;
+    private final HttpServletRequest request;
 
-    /**
-     * 构造器注入操作日志服务
-     *
-     * @param sysOperLogService 操作日志服务
-     */
-    public LogAspect(SysOperLogService sysOperLogService) {
+    public LogAspect(SysOperLogService sysOperLogService, HttpServletRequest request) {
         this.sysOperLogService = sysOperLogService;
+        this.request = request;
     }
 
     /**
@@ -79,6 +77,7 @@ public class LogAspect {
         operLog.setOperation(operation);
         operLog.setClassName(className);
         operLog.setMethodName(methodName);
+        operLog.setIp(getClientIp());
         operLog.setStatus(1);
 
         long startTime = System.currentTimeMillis();
@@ -98,5 +97,25 @@ public class LogAspect {
             logger.error("[操作日志] 用户: {}, 操作: {}, 耗时: {}ms, 异常: {}", username, operation, operLog.getTime(), e.getMessage());
             throw e;
         }
+    }
+
+    private String getClientIp() {
+        String ip = request.getHeader("X-Forwarded-For");
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("X-Real-IP");
+        }
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        if (ip != null && ip.contains(",")) {
+            ip = ip.split(",")[0].trim();
+        }
+        return ip;
     }
 }

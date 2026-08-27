@@ -1,5 +1,6 @@
 package com.pes.controller;
 
+import com.pes.annotation.LogOperation;
 import com.pes.annotation.RequirePermission;
 import com.pes.common.Result;
 import com.pes.dto.response.MenuTreeResp;
@@ -72,6 +73,7 @@ public class MenuController {
      */
     @PostMapping
     @RequirePermission("menu:add")
+    @LogOperation("新增菜单")
     public Result<SysMenu> create(@RequestBody SysMenu menu) {
         return Result.ok(sysMenuService.create(menu));
     }
@@ -85,6 +87,7 @@ public class MenuController {
      */
     @PutMapping("/{id}")
     @RequirePermission("menu:edit")
+    @LogOperation("修改菜单")
     public Result<SysMenu> update(@PathVariable("id") Long id, @RequestBody SysMenu menu) {
         return Result.ok(sysMenuService.update(id, menu));
     }
@@ -97,6 +100,7 @@ public class MenuController {
      */
     @DeleteMapping("/{id}")
     @RequirePermission("menu:delete")
+    @LogOperation("删除菜单")
     public Result<Void> delete(@PathVariable("id") Long id) {
         sysMenuService.delete(id);
         return Result.ok();

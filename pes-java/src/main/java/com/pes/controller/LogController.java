@@ -2,6 +2,7 @@ package com.pes.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.pes.annotation.LogOperation;
 import com.pes.annotation.RequirePermission;
 import com.pes.common.Result;
 import com.pes.entity.SysLoginLog;
@@ -65,6 +66,7 @@ public class LogController {
      */
     @DeleteMapping("/operation/{id}")
     @RequirePermission("log:delete")
+    @LogOperation("删除操作日志")
     public Result<Void> deleteOperLog(@PathVariable("id") Long id) {
         sysOperLogService.removeById(id);
         return Result.ok();
@@ -75,6 +77,7 @@ public class LogController {
      */
     @DeleteMapping("/operation/batch")
     @RequirePermission("log:delete")
+    @LogOperation("批量删除操作日志")
     public Result<Void> batchDeleteOperLog(@RequestBody List<Long> ids) {
         sysOperLogService.removeByIds(ids);
         return Result.ok();
@@ -85,6 +88,7 @@ public class LogController {
      */
     @DeleteMapping("/operation/clear")
     @RequirePermission("log:delete")
+    @LogOperation("清空操作日志")
     public Result<Void> clearOperLog() {
         sysOperLogService.remove(new QueryWrapper<>());
         return Result.ok();
@@ -119,6 +123,7 @@ public class LogController {
      */
     @DeleteMapping("/login/{id}")
     @RequirePermission("log:delete")
+    @LogOperation("删除登录日志")
     public Result<Void> deleteLoginLog(@PathVariable("id") Long id) {
         sysLoginLogService.removeById(id);
         return Result.ok();
@@ -129,6 +134,7 @@ public class LogController {
      */
     @DeleteMapping("/login/batch")
     @RequirePermission("log:delete")
+    @LogOperation("批量删除登录日志")
     public Result<Void> batchDeleteLoginLog(@RequestBody List<Long> ids) {
         sysLoginLogService.removeByIds(ids);
         return Result.ok();
@@ -139,6 +145,7 @@ public class LogController {
      */
     @DeleteMapping("/login/clear")
     @RequirePermission("log:delete")
+    @LogOperation("清空登录日志")
     public Result<Void> clearLoginLog() {
         sysLoginLogService.remove(new QueryWrapper<>());
         return Result.ok();

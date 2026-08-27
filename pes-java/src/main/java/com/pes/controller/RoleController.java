@@ -1,5 +1,6 @@
 package com.pes.controller;
 
+import com.pes.annotation.LogOperation;
 import com.pes.annotation.RequirePermission;
 import com.pes.common.Result;
 import com.pes.dto.request.RoleAssignReq;
@@ -60,6 +61,7 @@ public class RoleController {
      */
     @PostMapping
     @RequirePermission("role:add")
+    @LogOperation("新增角色")
     public Result<SysRole> create(@RequestBody SysRole role) {
         return Result.ok(sysRoleService.create(role));
     }
@@ -73,6 +75,7 @@ public class RoleController {
      */
     @PutMapping("/{id}")
     @RequirePermission("role:edit")
+    @LogOperation("修改角色")
     public Result<SysRole> update(@PathVariable("id") Long id, @RequestBody SysRole role) {
         return Result.ok(sysRoleService.update(id, role));
     }
@@ -85,6 +88,7 @@ public class RoleController {
      */
     @DeleteMapping("/{id}")
     @RequirePermission("role:delete")
+    @LogOperation("删除角色")
     public Result<Void> delete(@PathVariable("id") Long id) {
         sysRoleService.delete(id);
         return Result.ok();
@@ -99,6 +103,7 @@ public class RoleController {
      */
     @PostMapping("/{roleId}/assign")
     @RequirePermission("role:assign")
+    @LogOperation("分配角色权限")
     public Result<Void> assignMenu(@PathVariable("roleId") Long roleId, @RequestBody RoleAssignReq req) {
         sysRoleService.assignMenu(roleId, req.getMenuIds());
         return Result.ok();

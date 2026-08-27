@@ -1,5 +1,6 @@
 package com.pes.controller;
 
+import com.pes.annotation.LogOperation;
 import com.pes.annotation.RequirePermission;
 import com.pes.common.Result;
 import com.pes.dto.request.UserCreateReq;
@@ -68,6 +69,7 @@ public class UserController {
      */
     @PostMapping
     @RequirePermission("user:add")
+    @LogOperation("新增用户")
     public Result<SysUser> create(@RequestBody UserCreateReq req) {
         return Result.ok(sysUserService.create(req));
     }
@@ -81,6 +83,7 @@ public class UserController {
      */
     @PutMapping("/{id}")
     @RequirePermission("user:edit")
+    @LogOperation("修改用户")
     public Result<SysUser> update(@PathVariable("id") Long id, @RequestBody UserCreateReq req) {
         return Result.ok(sysUserService.update(id, req));
     }
@@ -93,6 +96,7 @@ public class UserController {
      */
     @DeleteMapping("/{id}")
     @RequirePermission("user:delete")
+    @LogOperation("删除用户")
     public Result<Void> delete(@PathVariable("id") Long id) {
         sysUserService.delete(id);
         return Result.ok();
@@ -135,6 +139,7 @@ public class UserController {
      * @return 修改后的用户信息（密码已脱敏）
      */
     @PutMapping("/profile")
+    @LogOperation("修改个人信息")
     public Result<SysUser> updateProfile(@RequestBody SysUser req) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         SysUser user = sysUserService.updateProfile(authentication.getName(), req);
@@ -149,6 +154,7 @@ public class UserController {
      * @return 操作结果
      */
     @PutMapping("/password")
+    @LogOperation("修改密码")
     public Result<Void> changePassword(@RequestBody Map<String, String> req) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         sysUserService.changePassword(authentication.getName(),
