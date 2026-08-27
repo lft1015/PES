@@ -1,105 +1,188 @@
-﻿# PES系统
-# 🔐 权限管理与密码加密系统（Spring Boot + Vue）
+# PES 权限管理系统
 
-基于 **Spring Boot 3** + **Vue 3** 前后端分离架构，实现 RBAC（基于角色的访问控制）权限管理，并深度集成 **BCrypt 密码加密**、**JWT 认证**、**动态路由**与**按钮级权限控制**。适合作为企业级应用的安全基础框架，也适合学习权限与加密实战。
-
----
-
-## 📌 项目特点
-
-- ✅ **密码加密**：采用 `BCryptPasswordEncoder`，自动加盐，相同明文产生不同密文，保障数据安全
-- ✅ **JWT 令牌**：登录后签发 JWT，包含用户身份与权限信息
-- ✅ **RBAC 权限模型**：用户 ↔ 角色 ↔ 权限（菜单/按钮），粒度可到按钮级
-- ✅ **前后端协同鉴权**：后端接口级权限（Spring Security），前端路由级 + 按钮级权限（自定义指令）
-- ✅ **统一异常处理**与**统一响应体**，API 规范清晰
-- ✅ **验证码**（Redis 存储）防暴力破解
-- ✅ **逻辑删除**、**多角色分配**等实用功能
+基于 **Spring Boot 3** + **Vue 3** 前后端分离架构的 RBAC（基于角色的访问控制）权限管理系统。支持用户管理、角色管理、菜单权限管理、操作日志审计等核心功能，适合作为企业级后台管理系统的基础框架。
 
 ---
 
-## 🛠 技术栈
+## 项目特点
+
+- **RBAC 权限模型**：用户 → 角色 → 菜单/按钮权限，粒度可到按钮级
+- **前后端协同鉴权**：后端自定义 `@RequirePermission` 注解 + AOP 切面拦截，前端 `usePermission` 组合式函数控制 UI 显隐
+- **JWT 令牌认证**：登录后签发 JWT，包含用户身份与权限信息，前端路由守卫拦截未登录请求
+- **BCrypt 密码加密**：自动加盐，相同明文产生不同密文，保障数据安全
+- **AOP 操作日志**：通过 `@LogOperation` 注解 + AOP 切面自动记录用户操作，支持分页查询与清理
+- **登录日志记录**：记录每次登录的 IP 地址、时间、成功/失败状态
+- **图形验证码**：登录时校验验证码，防暴力破解
+- **统一响应封装**：所有接口返回 `Result<T>` 结构（code / message / data）
+- **统一异常处理**：`@RestControllerAdvice` 全局拦截业务异常，返回标准错误码
+
+---
+
+## 技术栈
 
 | 后端 | 前端 |
 |------|------|
-| Java 17+ | Vue 3 |
+| Java 17 | Vue 3 (Composition API) |
 | Spring Boot 3.x | Vite |
 | Spring Security 6.x | Element Plus |
-| JWT (jjwt) | Pinia |
-| MyBatis-Plus | Vue Router |
+| MyBatis-Plus | Pinia |
+| JWT (jjwt) | Vue Router |
 | MySQL 8.0+ | Axios |
-| Redis 6.0+ | - |
-| — | — |
+| Redis 6.0+ | SCSS |
 
 ---
 
-## 📋 详细功能点列表（Function List）
+## 项目结构
 
-> 本列表可作为项目需求跟踪（RM）和开发任务拆分的直接依据。
+```
+PES/
+├── pes-java/                    # 后端 Spring Boot 项目
+│   └── src/main/java/com/pes/
+│       ├── annotation/          # 自定义注解（@RequirePermission、@LogOperation）
+│       ├── aspect/              # AOP 切面（权限拦截、操作日志）
+│       ├── common/              # 通用响应体（Result）
+│       ├── config/              # 配置类（Security、CORS、MyBatis-Plus）
+│       ├── controller/          # 控制器（Auth、User、Role、Menu、Log、Dashboard）
+│       ├── dto/                 # 请求/响应 DTO
+│       ├── entity/              # 数据实体（SysUser、SysRole、SysMenu 等）
+│       ├── exception/           # 异常定义与全局处理器
+│       ├── mapper/              # MyBatis-Plus Mapper
+│       ├── security/            # Spring Security 配置（JWT 过滤器、权限处理器）
+│       ├── service/             # 业务服务层
+│       └── utils/               # 工具类（JWT、验证码、Redis）
+│
+└── pes-vue/                     # 前端 Vue 3 项目
+    └── src/
+        ├── api/                 # 后端 API 请求封装
+        ├── assets/styles/       # 全局样式
+        ├── components/          # 公共组件
+        │   ├── common/          # 通用组件（Captcha 验证码）
+        │   └── layout/          # 布局组件（Sidebar、Header、Breadcrumb）
+        ├── composables/         # 组合式函数（usePermission）
+        ├── img/                 # 图片资源
+        ├── router/              # 路由配置与守卫
+        ├── store/modules/       # Pinia 状态管理（user、app）
+        ├── utils/               # 工具函数（storage、iconMap）
+        └── views/               # 页面视图
+            ├── dashboard/       # 仪表盘
+            ├── login/           # 登录
+            ├── log/             # 操作日志、登录日志
+            ├── profile/         # 个人中心
+            └── system/          # 系统管理（用户、角色、菜单）
+```
 
-### 1. 用户认证模块
-| 编号 | 功能点 | 安全/技术要点 |
-|------|--------|---------------|
-| 1.1 | 用户注册 | 密码通过 BCrypt 加密后入库，支持前端表单校验 |
-| 1.2 | 用户登录 | 图形验证码校验 + 账号密码校验，成功后签发 JWT |
-| 1.3 | 图形验证码 | 后端生成存入 Redis（有效期 2 分钟），前端 base64 展示 |
-| 1.4 | 登出 | 前端清除 Token 及用户信息，可选后端加入令牌黑名单 |
-| 1.5 | 令牌续期 | 🔲 计划中：通过 Refresh Token 自动刷新 JWT |
-| 1.6 | 密码重置 | 🔲 计划中：通过邮箱验证码校验身份后重置 |
+---
 
-### 2. 用户管理模块
-| 编号 | 功能点 | 权限标识 |
-|------|--------|----------|
-| 2.1 | 分页条件查询用户列表 | `user:list` |
-| 2.2 | 新增用户（自动加密密码） | `user:add` |
-| 2.3 | 编辑用户（用户名、邮箱、手机号等） | `user:edit` |
-| 2.4 | 逻辑删除用户（支持数据恢复） | `user:delete` |
-| 2.5 | 启用 / 禁用用户状态 | 🔲 计划中 `user:status` |
-| 2.6 | 为用户分配多个角色 | `user:assignRole` |
-| 2.7 | 管理员强制重置用户密码 | 🔲 计划中 `user:resetPwd` |
+## 功能模块
 
-### 3. 角色管理模块
-| 编号 | 功能点 | 权限标识 |
-|------|--------|----------|
-| 3.1 | 分页查询角色列表 | `role:list` |
-| 3.2 | 新增 / 编辑 / 删除角色 | `role:add` / `role:edit` / `role:delete` |
-| 3.3 | 启用 / 禁用角色状态 | 🔲 计划中 `role:status` |
-| 3.4 | 为角色分配菜单/按钮权限（权限树勾选） | `role:assignPerm` |
-| 3.5 | 角色编码唯一性校验（后端拦截） | 系统内置 |
+### 用户认证
+| 功能 | 说明 |
+|------|------|
+| 用户登录 | 验证码校验 + 账号密码校验，成功后签发 JWT |
+| 用户注册 | 密码 BCrypt 加密后入库 |
+| 图形验证码 | 后端生成，前端展示，有效期 2 分钟 |
+| 个人中心 | 修改个人信息、修改密码（需验证旧密码） |
 
-### 4. 菜单与权限管理模块
-| 编号 | 功能点 | 权限标识 |
-|------|--------|----------|
-| 4.1 | 菜单树形结构展示（支持无限极递归） | `menu:list` |
-| 4.2 | 新增 / 编辑 / 删除菜单节点 | `menu:add` / `menu:edit` / `menu:delete` |
-| 4.3 | 支持菜单类型：目录、页面菜单、按钮、外链 | 系统内置 |
-| 4.4 | 配置权限标识（如 `system:user:add`），用于后端接口拦截 | 系统内置 |
-| 4.5 | 菜单排序、显示/隐藏控制 | `menu:edit` |
+### 用户管理
+| 功能 | 权限标识 |
+|------|----------|
+| 分页查询用户列表 | `user:list` |
+| 新增用户 | `user:add` |
+| 编辑用户 | `user:edit` |
+| 删除用户 | `user:delete` |
 
-### 5. 密码与安全加密模块
-| 编号 | 功能点 | 说明 |
-|------|--------|------|
-| 5.1 | BCrypt 密码存储 | 每次存储自动生成随机盐值，相同明文不同密文 |
-| 5.2 | 密码验证 | 登录/修改时使用 `BCrypt.matches()` 比对明文与密文 |
-| 5.3 | 数据库密码字段长度安全 | 字段设置为 `VARCHAR(100)` 以上，兼容 BCrypt 60+ 位长度 |
-| 5.4 | 接口级权限控制 | 使用 Spring Security `@PreAuthorize("hasAuthority('xxx')")` |
-| 5.5 | 登录错误次数限制 | 🔲 计划中：同账号 5 次错误后锁定 10 分钟（Redis 计数） |
-| 5.6 | 敏感接口强制 HTTPS | 🔲 计划中：生产环境配置 SSL 证书 |
+### 角色管理
+| 功能 | 权限标识 |
+|------|----------|
+| 分页查询角色列表 | `role:list` |
+| 新增 / 编辑 / 删除角色 | `role:add` / `role:edit` / `role:delete` |
+| 为角色分配菜单/按钮权限（树形勾选） | `role:assign` |
 
-### 6. 前端权限控制模块
-| 编号 | 功能点 | 实现方式 |
-|------|--------|----------|
-| 6.1 | 动态路由加载 | 登录后获取后端菜单树，调用 `router.addRoute()` 动态挂载 |
-| 6.2 | 路由全局守卫 | `router.beforeEach` 拦截，校验 Token 有效性，无权限跳转 401 |
-| 6.3 | 按钮级权限控制 | 自定义指令 `v-permission="'user:delete'"` 控制 DOM 显隐 |
-| 6.4 | 全局权限校验方法 | 提供 `hasPermission('xxx')` 方法，用于 `v-if` 逻辑判断 |
-| 6.5 | 用户状态持久化 | Pinia 存储用户信息 + Token 持久化到 localStorage |
+### 菜单管理
+| 功能 | 权限标识 |
+|------|----------|
+| 菜单树形展示（类型：菜单/按钮） | `menu:list` |
+| 新增 / 编辑 / 删除菜单节点 | `menu:add` / `menu:edit` / `menu:delete` |
+| 配置权限标识（用于后端接口拦截） | `menu:edit` |
 
-### 7. 系统基础功能
-| 编号 | 功能点 | 说明 |
-|------|--------|------|
-| 7.1 | 统一异常处理 | `@RestControllerAdvice` 全局拦截业务异常，返回标准错误码 |
-| 7.2 | 统一响应封装 | 所有接口返回 `Result<T>` 结构（code / message / data） |
-| 7.3 | 跨域配置（CORS） | 后端配置允许前端域名，支持携带 Cookie/Token |
-| 7.4 | API 文档自动生成 | 🔲 计划中：集成 Knife4j / Swagger |
-| 7.5 | 个人中心 | 支持修改密码（需验证旧密码）、更新个人信息 |
-| 7.6 | 操作日志记录 | ✅ 使用 AOP 切面记录用户操作，支持分页查询与清理 |
+### 日志管理
+| 功能 | 权限标识 |
+|------|----------|
+| 操作日志查询 | `log:list` |
+| 登录日志查询 | `log:list` |
+| 单条删除 / 批量删除 / 清空日志 | `log:delete` |
+
+### 仪表盘
+| 功能 | 说明 |
+|------|------|
+| 系统概览统计 | 用户数、角色数、菜单数、今日登录数 |
+
+---
+
+## 权限模型
+
+```
+用户（SysUser） ──多对多──→ 角色（SysRole） ──多对多──→ 菜单（SysMenu）
+                                                          │
+                                            ┌─────────────┴─────────────┐
+                                           type=1 菜单（侧边栏可见）    type=2 按钮（权限标识）
+```
+
+- **后端**：通过 `@RequirePermission("xxx")` 注解 + AOP 切面（`PermissionAspect`）拦截接口
+- **前端侧边栏**：根据用户权限自动过滤菜单（`Sidebar.vue` 中 `filterByPermission` 递归过滤）
+- **前端按钮**：通过 `v-if="checkPermission('xxx')"` 控制显隐（`usePermission` 组合式函数）
+
+---
+
+## 快速开始
+
+### 环境要求
+
+- JDK 17+
+- Maven 3.8+
+- MySQL 8.0+
+- Redis 6.0+
+- Node.js 18+
+
+### 后端启动
+
+```bash
+cd pes-java
+
+# 1. 创建数据库
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS pes_db DEFAULT CHARACTER SET utf8mb4;"
+
+# 2. 修改 application-dev.yml 中的数据库和 Redis 连接信息
+
+# 3. 启动（首次启动自动初始化表结构和种子数据）
+mvn spring-boot:run
+```
+
+默认管理员账号：`admin` / `admin123`
+
+### 前端启动
+
+```bash
+cd pes-vue
+
+# 安装依赖
+npm install
+
+# 启动开发服务器（默认 http://localhost:5173）
+npm run dev
+
+# 生产构建
+npm run build
+```
+
+---
+
+## 内置角色
+
+| 角色 | 编码 | 权限范围 |
+|------|------|----------|
+| 超级管理员 | admin | 全部菜单和按钮权限 |
+| 普通用户 | user | 仅仪表盘查看 |
+| 部门经理 | manager | 用户管理 + 日志管理 |
+| 运维人员 | operator | 系统管理（只读）+ 日志管理 |
+| 审计员 | auditor | 仅日志管理 |
