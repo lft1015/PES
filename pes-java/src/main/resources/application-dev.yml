@@ -6,7 +6,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
-      mode: always
+      # never：不在应用启动时重置数据库。
+      # 界面配置的 RBAC 权限（角色-菜单关联等）可持久保存；
+      # 如需重新初始化，临时改为 always 或手动执行 db/schema.sql + db/data.sql。
+      mode: never
       schema-locations: classpath:db/schema.sql
       data-locations: classpath:db/data.sql
       continue-on-error: true

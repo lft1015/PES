@@ -15,7 +15,7 @@
 
     <!-- 搜索工具栏 -->
     <div class="toolbar-card">
-      <div class="toolbar-left">
+      <div class="toolbar-left" v-if="checkPermission('menu:view')">
         <el-input
           v-model="searchKeyword"
           placeholder="请输入菜单名称搜索"

@@ -9,6 +9,7 @@ import com.pes.service.SysRoleService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 角色管理控制器
@@ -42,13 +43,15 @@ public class RoleController {
     }
 
     /**
-     * 根据 ID 查询角色详情
+     * 根据 ID 查询角色详情（含已分配的菜单 ID）
+     * 该接口专供"分配权限"弹窗回显使用，故用 role:assign 权限而非 role:view，
+     * 否则有分配权限但无查询权限的角色将无法打开分配权限弹窗
      *
      * @param id 角色 ID
-     * @return 角色实体
+     * @return 角色实体（含 menuIds）
      */
     @GetMapping("/{id}")
-    @RequirePermission("role:view")
+    @RequirePermission("role:assign")
     public Result<SysRole> getById(@PathVariable("id") Long id) {
         return Result.ok(sysRoleService.getById(id));
     }
@@ -107,5 +110,23 @@ public class RoleController {
     public Result<Void> assignMenu(@PathVariable("roleId") Long roleId, @RequestBody RoleAssignReq req) {
         sysRoleService.assignMenu(roleId, req.getMenuIds());
         return Result.ok();
+    }
+
+    /**
+     * 角色下拉选项（轻量，无需 role:list 权限）
+     * 供"新增/编辑用户"弹窗选择角色使用：有 user:add/user:edit 权限即可使用
+     *
+     * @return 角色选项列表，包含 id 和 name
+     */
+    @GetMapping("/options")
+    public Result<List<Map<String, Object>>> options() {
+        List<SysRole> roles = sysRoleService.search(null);
+        List<Map<String, Object>> opts = roles.stream().map(r -> {
+            Map<String, Object> m = new java.util.HashMap<>();
+            m.put("id", r.getId());
+            m.put("name", r.getName());
+            return m;
+        }).collect(java.util.stream.Collectors.toList());
+        return Result.ok(opts);
     }
 }

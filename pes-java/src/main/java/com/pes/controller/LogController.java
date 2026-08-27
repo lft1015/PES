@@ -43,7 +43,7 @@ public class LogController {
      * 分页查询操作日志
      */
     @GetMapping("/operation")
-    @RequirePermission("log:list")
+    @RequirePermission("operlog:list")
     public Result<Page<SysOperLog>> listOperLog(
             @RequestParam(name = "page", defaultValue = "1") int page,
             @RequestParam(name = "pageSize", defaultValue = "10") int pageSize,
@@ -65,7 +65,7 @@ public class LogController {
      * 删除操作日志
      */
     @DeleteMapping("/operation/{id}")
-    @RequirePermission("log:delete")
+    @RequirePermission("operlog:delete")
     @LogOperation("删除操作日志")
     public Result<Void> deleteOperLog(@PathVariable("id") Long id) {
         sysOperLogService.removeById(id);
@@ -76,7 +76,7 @@ public class LogController {
      * 批量删除操作日志
      */
     @DeleteMapping("/operation/batch")
-    @RequirePermission("log:delete")
+    @RequirePermission("operlog:batch")
     @LogOperation("批量删除操作日志")
     public Result<Void> batchDeleteOperLog(@RequestBody List<Long> ids) {
         sysOperLogService.removeByIds(ids);
@@ -87,7 +87,7 @@ public class LogController {
      * 清空所有操作日志
      */
     @DeleteMapping("/operation/clear")
-    @RequirePermission("log:delete")
+    @RequirePermission("operlog:clear")
     @LogOperation("清空操作日志")
     public Result<Void> clearOperLog() {
         sysOperLogService.remove(new QueryWrapper<>());
@@ -100,7 +100,7 @@ public class LogController {
      * 分页查询登录日志
      */
     @GetMapping("/login")
-    @RequirePermission("log:list")
+    @RequirePermission("loginlog:list")
     public Result<Page<SysLoginLog>> listLoginLog(
             @RequestParam(name = "page", defaultValue = "1") int page,
             @RequestParam(name = "pageSize", defaultValue = "10") int pageSize,
@@ -122,7 +122,7 @@ public class LogController {
      * 删除登录日志
      */
     @DeleteMapping("/login/{id}")
-    @RequirePermission("log:delete")
+    @RequirePermission("loginlog:delete")
     @LogOperation("删除登录日志")
     public Result<Void> deleteLoginLog(@PathVariable("id") Long id) {
         sysLoginLogService.removeById(id);
@@ -133,7 +133,7 @@ public class LogController {
      * 批量删除登录日志
      */
     @DeleteMapping("/login/batch")
-    @RequirePermission("log:delete")
+    @RequirePermission("loginlog:batch")
     @LogOperation("批量删除登录日志")
     public Result<Void> batchDeleteLoginLog(@RequestBody List<Long> ids) {
         sysLoginLogService.removeByIds(ids);
@@ -144,7 +144,7 @@ public class LogController {
      * 清空所有登录日志
      */
     @DeleteMapping("/login/clear")
-    @RequirePermission("log:delete")
+    @RequirePermission("loginlog:clear")
     @LogOperation("清空登录日志")
     public Result<Void> clearLoginLog() {
         sysLoginLogService.remove(new QueryWrapper<>());

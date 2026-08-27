@@ -65,4 +65,14 @@ public class AuthController {
         authService.logout();
         return Result.ok();
     }
+
+    /**
+     * 获取当前登录用户的最新权限信息
+     * GET /auth/me → { code: 200, data: { username, nickname, roles, permissions } }
+     */
+    @GetMapping("/auth/me")
+    public Result<LoginResp> getCurrentUserInfo() {
+        LoginResp resp = authService.getCurrentUserInfo();
+        return Result.ok(resp);
+    }
 }

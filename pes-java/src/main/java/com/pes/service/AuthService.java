@@ -37,4 +37,11 @@ public interface AuthService {
      * @param req 注册请求
      */
     void register(RegisterReq req);
+
+    /**
+     * 获取当前登录用户的权限信息
+     *
+     * @return 登录响应（包含最新权限列表）
+     */
+    LoginResp getCurrentUserInfo();
 }

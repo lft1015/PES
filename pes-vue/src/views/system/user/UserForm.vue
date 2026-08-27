@@ -53,7 +53,7 @@
 <script setup>
 import { ref, reactive, watch, onMounted } from 'vue'
 import { createUser, updateUser } from '@/api/user'
-import { getRoleList } from '@/api/role'
+import { getRoleOptions } from '@/api/role'
 import { ElMessage } from 'element-plus'
 
 const props = defineProps({
@@ -131,7 +131,7 @@ watch(() => props.editData, (val) => {
 const loadRoles = async () => {
   roleLoading.value = true
   try {
-    const res = await getRoleList()
+    const res = await getRoleOptions()
     roleOptions.value = Array.isArray(res) ? res : []
   } catch {
     roleOptions.value = []

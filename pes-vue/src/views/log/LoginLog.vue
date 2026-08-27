@@ -14,7 +14,7 @@
 
     <!-- 搜索工具栏 -->
     <div class="toolbar-card">
-      <div class="toolbar-left">
+      <div class="toolbar-left" v-if="checkPermission('loginlog:view')">
         <el-select
           v-model="searchForm.username"
           placeholder="登录用户"
@@ -46,10 +46,10 @@
         </el-button>
       </div>
       <div class="toolbar-right">
-        <el-button type="danger" plain v-if="checkPermission('log:delete')" @click="handleBatchDelete" :disabled="selectedIds.length === 0">
+        <el-button type="danger" plain v-if="checkPermission('loginlog:batch')" @click="handleBatchDelete" :disabled="selectedIds.length === 0">
           <el-icon><Delete /></el-icon> 批量删除 ({{ selectedIds.length }})
         </el-button>
-        <el-button type="danger" v-if="checkPermission('log:delete')" @click="handleClear">
+        <el-button type="danger" v-if="checkPermission('loginlog:clear')" @click="handleClear">
           <el-icon><DeleteFilled /></el-icon> 清空日志
         </el-button>
       </div>
@@ -99,7 +99,7 @@
           </el-table-column>
           <el-table-column label="操作" min-width="80" fixed="right" align="center">
           <template #default="{ row }">
-            <el-button size="small" type="danger" v-if="checkPermission('log:delete')" @click="handleDelete(row.id)">
+            <el-button size="small" type="danger" v-if="checkPermission('loginlog:delete')" @click="handleDelete(row.id)">
               <el-icon><Delete /></el-icon> 删除
             </el-button>
           </template>

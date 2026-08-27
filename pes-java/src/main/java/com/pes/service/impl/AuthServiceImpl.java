@@ -211,6 +211,55 @@ public class AuthServiceImpl implements AuthService {
     }
 
     /**
+     * 获取当前登录用户的最新权限信息
+     * 从数据库实时查询，用于权限变更后刷新前端缓存
+     */
+    @Override
+    public LoginResp getCurrentUserInfo() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        SysUser user = sysUserMapper.selectOne(new LambdaQueryWrapper<SysUser>()
+                .eq(SysUser::getUsername, username));
+
+        List<String> roleCodes = new ArrayList<>();
+        List<String> roleNames = new ArrayList<>();
+        List<String> permissions = new ArrayList<>();
+
+        List<SysUserRole> userRoles = sysUserRoleMapper.selectList(new LambdaQueryWrapper<SysUserRole>()
+                .eq(SysUserRole::getUserId, user.getId()));
+        for (SysUserRole userRole : userRoles) {
+            SysRole role = sysRoleMapper.selectById(userRole.getRoleId());
+            if (role != null) {
+                roleCodes.add(role.getCode());
+                roleNames.add(role.getName());
+
+                List<SysRoleMenu> roleMenus = sysRoleMenuMapper.selectList(
+                        new LambdaQueryWrapper<SysRoleMenu>().eq(SysRoleMenu::getRoleId, role.getId()));
+                List<Long> menuIds = roleMenus.stream()
+                        .map(SysRoleMenu::getMenuId)
+                        .collect(Collectors.toList());
+                if (!menuIds.isEmpty()) {
+                    List<SysMenu> menus = sysMenuMapper.selectBatchIds(menuIds);
+                    for (SysMenu menu : menus) {
+                        if (menu.getPermission() != null && !menu.getPermission().isEmpty()) {
+                            permissions.add(menu.getPermission());
+                        }
+                    }
+                }
+            }
+        }
+
+        return LoginResp.builder()
+                .username(user.getUsername())
+                .nickname(user.getNickname())
+                .roles(roleCodes)
+                .roleNames(roleNames)
+                .permissions(permissions)
+                .build();
+    }
+
+    /**
      * 用户注册
      * 校验验证码 → 检查用户名唯一性 → 加密密码 → 创建用户 → 默认分配普通用户角色（roleId=2）
      */

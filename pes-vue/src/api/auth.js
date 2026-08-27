@@ -16,6 +16,19 @@ import request from './request'
  *
  * @returns {Promise<{key: string, image: string}>} key 登录时回传，image 是 base64 可直接用于 <img src>
  */
+/**
+ * 获取当前登录用户的最新权限信息
+ * GET /auth/me -> { username, nickname, roles, permissions }
+ *
+ * @returns {Promise<Object>} 用户信息和最新权限列表
+ */
+export const getCurrentUserInfo = () => {
+  return request({
+    url: '/auth/me',
+    method: 'get'
+  })
+}
+
 export const getCaptcha = () => {
   return request({
     url: '/captcha',

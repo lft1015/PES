@@ -82,6 +82,7 @@ import { ref, computed, inject, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAppStore } from '@/store/modules/app'
 import { useUserStore } from '@/store/modules/user'
+import { storeToRefs } from 'pinia'
 import { Expand, Fold } from '@element-plus/icons-vue'
 import { getIcon } from '@/utils/iconMap'
 import logoImg from '@/img/smile.jpg'
@@ -91,6 +92,7 @@ const route = useRoute()
 const router = useRouter()
 const appStore = useAppStore()
 const userStore = useUserStore()
+const { permissions } = storeToRefs(userStore)
 
 // 通过 provide/inject 与 Header 共享折叠状态
 const collapsed = inject('sidebarCollapsed', ref(false))
@@ -102,12 +104,12 @@ watch(collapsed, (val) => {
 
 // 递归过滤菜单：type=0(目录) 和 type=1(菜单) 参与侧边栏渲染，type=2(按钮) 不显示
 const filterByPermission = (menus) => {
-  const permissions = userStore.permissions || []
+  const permList = permissions.value || []
   return menus
     .filter(m => m && (m.type === 0 || m.type === 1))
     .filter(m => {
       if (m.type === 0) return true
-      return !m.permission || permissions.includes(m.permission)
+      return !m.permission || permList.includes(m.permission)
     })
     .map(m => ({
       ...m,

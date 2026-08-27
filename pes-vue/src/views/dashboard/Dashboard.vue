@@ -49,17 +49,17 @@
       <div class="quick-actions">
         <div class="section-title">🚀 快捷操作</div>
         <div class="actions-grid">
-          <div class="action-card" @click="$router.push('/system/user')">
+          <div class="action-card" v-if="checkPermission('user:list')" @click="$router.push('/system/user')">
             <div class="action-icon action-blue"><el-icon :size="18"><User /></el-icon></div>
             <span>用户管理</span>
             <el-icon class="action-arrow"><ArrowRight /></el-icon>
           </div>
-          <div class="action-card" @click="$router.push('/system/role')">
+          <div class="action-card" v-if="checkPermission('role:list')" @click="$router.push('/system/role')">
             <div class="action-icon action-red"><el-icon :size="18"><Lock /></el-icon></div>
             <span>角色管理</span>
             <el-icon class="action-arrow"><ArrowRight /></el-icon>
           </div>
-          <div class="action-card" @click="$router.push('/system/menu')">
+          <div class="action-card" v-if="checkPermission('menu:list')" @click="$router.push('/system/menu')">
             <div class="action-icon action-yellow"><el-icon :size="18"><Menu /></el-icon></div>
             <span>菜单管理</span>
             <el-icon class="action-arrow"><ArrowRight /></el-icon>
@@ -90,12 +90,14 @@
 import { reactive, onMounted } from 'vue'
 import { useUserStore } from '@/store/modules/user'
 import { getDashboardStats } from '@/api/dashboard'
+import { usePermission } from '@/composables/usePermission'
 /** Element Plus 图标 */
 import { User, UserFilled, Lock, Menu, Avatar, Connection, Setting, ArrowRight } from '@element-plus/icons-vue'
 /** 哆啦A梦插画 */
 import dashboardImg from '@/img/dashboard.jpg'
 
 const userStore = useUserStore()
+const { checkPermission } = usePermission()
 
 /** 统计数据（响应式） */
 const stats = reactive({ userCount: 0, roleCount: 0, menuCount: 0 })

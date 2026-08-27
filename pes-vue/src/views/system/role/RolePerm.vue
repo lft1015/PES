@@ -109,6 +109,8 @@
 import { ref, watch, onMounted, computed, nextTick } from 'vue'
 import { getMenuTree } from '@/api/menu'
 import { getRoleById, assignMenu } from '@/api/role'
+import { getCurrentUserInfo } from '@/api/auth'
+import { useUserStore } from '@/store/modules/user'
 import { ElMessage } from 'element-plus'
 import {
   Key, Search, Select, CloseBold, Fold, Check,
@@ -123,6 +125,8 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['close', 'success'])
+
+const userStore = useUserStore()
 
 const visible = ref(true)
 const treeRef = ref()
@@ -249,6 +253,14 @@ const handleSubmit = async () => {
   try {
     const menuIds = treeRef.value.getCheckedKeys()
     await assignMenu(props.roleId, { menuIds })
+    if (roleInfo.value && userStore.roles.includes(roleInfo.value.code)) {
+      try {
+        const info = await getCurrentUserInfo()
+        userStore.setUserInfo(info)
+      } catch (e) {
+        // refresh silently
+      }
+    }
     ElMessage.success('权限分配成功')
     emit('success')
     visible.value = false

@@ -8,7 +8,7 @@
 
     <!-- 搜索工具栏 -->
     <div class="toolbar-card">
-      <div class="toolbar-left">
+      <div class="toolbar-left" v-if="checkPermission('user:view')">
         <el-input
           v-model="searchForm.keyword"
           placeholder="请输入用户名搜索"

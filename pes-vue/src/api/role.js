@@ -18,6 +18,17 @@ export const getRoleList = (params) => {
 }
 
 /**
+ * 角色下拉选项（供新增/编辑用户时选择角色，无需 role:list 权限）
+ * @returns {Promise} [{ id, name }]
+ */
+export const getRoleOptions = () => {
+  return request({
+    url: '/roles/options',
+    method: 'get'
+  })
+}
+
+/**
  * 根据 ID 查询角色详情
  * @param {number} id - 角色 ID
  * @returns {Promise} 角色信息 + 已分配的菜单 ID 列表
