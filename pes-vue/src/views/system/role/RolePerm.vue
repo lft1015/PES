@@ -24,7 +24,7 @@
     <div class="perm-tips" v-if="!loading">
       <el-alert type="info" :closable="false" show-icon>
         <template #title>
-          <span>勾选菜单后，半选状态的父级菜单会自动关联。选中 <strong>{{ checkedCount }}</strong> 个菜单项</span>
+          <span>目录和菜单控制页面/导航的可见性，按钮控制页面内的操作权限。已选中 <strong>{{ checkedCount }}</strong> 项</span>
         </template>
       </el-alert>
     </div>
@@ -32,7 +32,7 @@
     <div class="perm-toolbar" v-if="!loading">
       <el-input
         v-model="filterText"
-        placeholder="搜索菜单/按钮名称"
+        placeholder="搜索目录/菜单/按钮"
         size="default"
         clearable
         class="filter-input"
@@ -68,6 +68,7 @@
         :props="treeProps"
         :filter-node-method="filterNode"
         show-checkbox
+        check-strictly
         node-key="id"
         default-expand-all
         highlight-current
@@ -139,9 +140,7 @@ const treeProps = {
 
 const checkedCount = computed(() => {
   if (!treeRef.value) return 0
-  const checked = treeRef.value.getCheckedKeys()
-  const half = treeRef.value.getHalfCheckedKeys()
-  return checked.length + half.length
+  return treeRef.value.getCheckedKeys().length
 })
 
 const getNodeIcon = (data) => {
@@ -194,12 +193,12 @@ const loadData = async () => {
 
     if (roleRes && roleRes.menuIds && roleRes.menuIds.length > 0) {
       await nextTick()
-      const leafIds = roleRes.menuIds.filter(id => {
+      const validIds = roleRes.menuIds.filter(id => {
         const node = treeRef.value?.getNode(id)
-        return node && node.data && node.data.type === 2
+        return node && node.data
       })
-      if (leafIds.length > 0) {
-        treeRef.value?.setCheckedKeys(leafIds)
+      if (validIds.length > 0) {
+        treeRef.value?.setCheckedKeys(validIds)
       }
     }
   } catch (error) {
@@ -248,9 +247,7 @@ const handleCancel = () => {
 const handleSubmit = async () => {
   submitting.value = true
   try {
-    const checkedKeys = treeRef.value.getCheckedKeys()
-    const halfCheckedKeys = treeRef.value.getHalfCheckedKeys()
-    const menuIds = [...checkedKeys, ...halfCheckedKeys]
+    const menuIds = treeRef.value.getCheckedKeys()
     await assignMenu(props.roleId, { menuIds })
     ElMessage.success('权限分配成功')
     emit('success')
