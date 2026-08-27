@@ -13,7 +13,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 角色服务实现
@@ -41,6 +43,18 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         }
         qw.orderByAsc(SysRole::getId);
         return baseMapper.selectList(qw);
+    }
+
+    @Override
+    public SysRole getById(Serializable id) {
+        SysRole role = super.getById(id);
+        if (role != null) {
+            List<Long> menuIds = sysRoleMenuMapper.selectList(
+                    new LambdaQueryWrapper<SysRoleMenu>().eq(SysRoleMenu::getRoleId, id)
+            ).stream().map(SysRoleMenu::getMenuId).collect(Collectors.toList());
+            role.setMenuIds(menuIds);
+        }
+        return role;
     }
 
     @Override

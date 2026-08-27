@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * 角色实体
@@ -40,4 +41,8 @@ public class SysRole {
     /** 乐观锁版本号 */
     @Version
     private Integer version;
+
+    /** 该角色已分配的菜单 ID 列表（非数据库字段，查询时动态填充） */
+    @TableField(exist = false)
+    private List<Long> menuIds;
 }
