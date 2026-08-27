@@ -15159,3 +15159,1134 @@ org.springframework.security.core.userdetails.UsernameNotFoundException: 用户�
 2026-08-27 16:46:49.077 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==> Parameters: 1(Long)
 2026-08-27 16:46:49.077 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 27
 2026-08-27 16:46:49.079 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - <==      Total: 26
+2026-08-27 16:59:58.649 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 16:59:58.654 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 17:00:01.191 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-27 17:00:01.225 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 19512 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-27 17:00:01.225 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-27 17:00:01.225 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-27 17:00:01.756 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 17:00:01.758 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 17:00:01.787 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2026-08-27 17:00:02.360 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-27 17:00:02.366 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-27 17:00:02.367 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 17:00:02.368 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-27 17:00:02.413 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-27 17:00:02.414 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1151 ms
+2026-08-27 17:00:02.540 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 17:00:02.760 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4cd7e993
+2026-08-27 17:00:02.761 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 17:00:03.003 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-27 17:00:03.578 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-27 17:00:03.927 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@65f36591, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a7bd9a8, org.springframework.security.web.context.SecurityContextHolderFilter@7e69bf78, org.springframework.security.web.header.HeaderWriterFilter@4af50246, org.springframework.web.filter.CorsFilter@7df3da0b, com.pes.security.filter.JwtAuthenticationFilter@6febec41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f69d246, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bfdc92b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72b6fa98, org.springframework.security.web.session.SessionManagementFilter@6e069ca9, org.springframework.security.web.access.ExceptionTranslationFilter@3fcb737, org.springframework.security.web.access.intercept.AuthorizationFilter@42095996]
+2026-08-27 17:00:04.174 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-27 17:00:04.184 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-27 17:00:04.189 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.481 seconds (process running for 4.205)
+2026-08-27 17:02:35.615 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 17:02:35.615 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 17:02:35.617 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-08-27 17:02:35.626 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:02:35.807 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:35.828 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:35.852 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:35.869 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:35.884 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:02:35.902 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:02:35.902 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:35.904 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:02:36.189 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /dashboard/stats
+2026-08-27 17:02:36.193 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:36.193 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:36.194 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:36.196 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:36.196 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:36.197 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:36.197 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:36.197 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:36.200 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:36.200 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:36.200 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:36.205 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:36.206 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /dashboard/stats
+2026-08-27 17:02:36.208 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_user
+2026-08-27 17:02:36.209 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectCount - ==> Parameters: 
+2026-08-27 17:02:36.212 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectCount - <==      Total: 1
+2026-08-27 17:02:36.214 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_role
+2026-08-27 17:02:36.214 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==> Parameters: 
+2026-08-27 17:02:36.216 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectCount - <==      Total: 1
+2026-08-27 17:02:36.222 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_menu WHERE (type = ? AND component IS NOT NULL AND component <> ? AND component <> ?)
+2026-08-27 17:02:36.222 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectCount - ==> Parameters: 1(Integer), (String), Layout(String)
+2026-08-27 17:02:36.224 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectCount - <==      Total: 1
+2026-08-27 17:02:42.214 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:02:42.218 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:42.218 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:42.219 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:42.220 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:42.221 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:42.222 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:42.222 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:42.223 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:42.224 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:42.224 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:42.224 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:42.231 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:42.233 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:02:42.233 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:02:42.237 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:42.239 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:02:45.764 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/options
+2026-08-27 17:02:45.764 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /logs/login?page=1&pageSize=10
+2026-08-27 17:02:45.767 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:45.767 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:45.767 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:45.767 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:45.768 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.768 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.769 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:45.769 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:45.769 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.769 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.770 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.770 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.771 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.771 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.771 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.771 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.773 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.773 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.773 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:45.773 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.774 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:45.774 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.775 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:45.775 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:45.775 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users/options
+2026-08-27 17:02:45.775 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /logs/login?page=1&pageSize=10
+2026-08-27 17:02:45.778 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user ORDER BY id ASC
+2026-08-27 17:02:45.780 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:45.780 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 8
+2026-08-27 17:02:45.783 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.783 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.783 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.785 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.785 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:45.785 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.785 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.785 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 2(Long)
+2026-08-27 17:02:45.789 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.789 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.789 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:45.790 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.795 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.795 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 3(Long)
+2026-08-27 17:02:45.795 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.795 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.795 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:02:45.795 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.801 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.801 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 4(Long)
+2026-08-27 17:02:45.801 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.801 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.801 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:45.801 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.804 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.804 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 5(Long)
+2026-08-27 17:02:45.805 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.806 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.806 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:02:45.807 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.808 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.808 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 6(Long)
+2026-08-27 17:02:45.808 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.808 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.808 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:45.810 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.810 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.810 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 7(Long)
+2026-08-27 17:02:45.812 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.812 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.812 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 4(Long)
+2026-08-27 17:02:45.812 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.812 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:45.812 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 8(Long)
+2026-08-27 17:02:45.812 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:45.815 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:45.815 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 5(Long)
+2026-08-27 17:02:45.816 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:45.847 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectList_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM sys_login_log
+2026-08-27 17:02:45.847 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectList_mpCount - ==> Parameters: 
+2026-08-27 17:02:45.847 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectList_mpCount - <==      Total: 1
+2026-08-27 17:02:45.849 [http-nio-8080-exec-4] DEBUG c.p.m.SysLoginLogMapper.selectList - ==>  Preparing: SELECT id,username,ip,status,login_time FROM sys_login_log ORDER BY login_time DESC LIMIT ?
+2026-08-27 17:02:45.849 [http-nio-8080-exec-4] DEBUG c.p.m.SysLoginLogMapper.selectList - ==> Parameters: 10(Long)
+2026-08-27 17:02:45.853 [http-nio-8080-exec-4] DEBUG c.p.m.SysLoginLogMapper.selectList - <==      Total: 10
+2026-08-27 17:02:46.525 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /logs/operation?page=1&pageSize=10
+2026-08-27 17:02:46.525 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/options
+2026-08-27 17:02:46.527 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:46.527 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:46.527 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:46.527 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:46.528 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.528 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.529 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:46.529 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:46.529 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.529 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.531 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.531 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.531 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.531 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.531 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.531 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.533 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.533 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.533 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:46.533 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:46.533 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.533 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.534 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:46.534 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:46.537 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users/options
+2026-08-27 17:02:46.537 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /logs/operation?page=1&pageSize=10
+2026-08-27 17:02:46.539 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user ORDER BY id ASC
+2026-08-27 17:02:46.539 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:46.542 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectList_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM sys_oper_log
+2026-08-27 17:02:46.542 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectList_mpCount - ==> Parameters: 
+2026-08-27 17:02:46.542 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 8
+2026-08-27 17:02:46.544 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectList_mpCount - <==      Total: 1
+2026-08-27 17:02:46.544 [http-nio-8080-exec-6] DEBUG c.p.m.SysOperLogMapper.selectList - ==>  Preparing: SELECT id,username,operation,class_name,method_name,params,time,ip,status,create_time FROM sys_oper_log ORDER BY create_time DESC LIMIT ?
+2026-08-27 17:02:46.544 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.544 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.544 [http-nio-8080-exec-6] DEBUG c.p.m.SysOperLogMapper.selectList - ==> Parameters: 10(Long)
+2026-08-27 17:02:46.546 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.546 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.546 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:46.546 [http-nio-8080-exec-6] DEBUG c.p.m.SysOperLogMapper.selectList - <==      Total: 10
+2026-08-27 17:02:46.550 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.553 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.553 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 2(Long)
+2026-08-27 17:02:46.553 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.553 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.553 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:46.556 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.556 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.558 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 3(Long)
+2026-08-27 17:02:46.558 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.558 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.558 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:02:46.558 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.561 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.561 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 4(Long)
+2026-08-27 17:02:46.561 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.561 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.561 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:46.563 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.563 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.563 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 5(Long)
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 6(Long)
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.565 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 7(Long)
+2026-08-27 17:02:46.571 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.571 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.571 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 4(Long)
+2026-08-27 17:02:46.571 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:46.573 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:46.573 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 8(Long)
+2026-08-27 17:02:46.574 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:46.574 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:46.574 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 5(Long)
+2026-08-27 17:02:46.575 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:48.419 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:02:48.422 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:48.423 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:48.423 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:48.423 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:48.423 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:48.425 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:48.427 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:48.427 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:48.427 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:48.427 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:48.429 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:48.429 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:48.429 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:02:48.429 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:02:48.429 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:48.429 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:02:49.278 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:02:49.282 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:49.282 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:49.284 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:49.290 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:02:49.290 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:02:49.290 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:49.290 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:02:50.100 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2026-08-27 17:02:50.105 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:50.105 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:50.106 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.107 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:50.107 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:50.109 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.109 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.109 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:50.110 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.110 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:50.110 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:50.112 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:50.112 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2026-08-27 17:02:50.113 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user ORDER BY id ASC
+2026-08-27 17:02:50.114 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:50.114 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 8
+2026-08-27 17:02:50.115 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.115 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:50.116 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.117 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.117 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:50.117 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.117 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.117 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 2(Long)
+2026-08-27 17:02:50.120 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.120 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.120 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:50.121 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.121 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.121 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 3(Long)
+2026-08-27 17:02:50.121 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 4(Long)
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 5(Long)
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:02:50.122 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.128 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.128 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 6(Long)
+2026-08-27 17:02:50.129 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.129 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.129 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:02:50.130 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 7(Long)
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 4(Long)
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 8(Long)
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 5(Long)
+2026-08-27 17:02:50.132 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:51.076 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:02:51.078 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:51.078 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:51.078 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:51.081 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:51.081 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:51.081 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:51.082 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:51.082 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:51.084 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:51.085 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:51.085 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:51.086 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:51.087 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:02:51.088 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:02:51.088 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:51.089 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:02:52.648 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:02:52.651 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:52.651 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:52.652 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:52.653 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:52.654 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:52.655 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:52.656 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:52.657 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:52.658 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:52.658 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:52.659 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:52.661 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:52.661 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:02:52.661 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:02:52.661 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:52.665 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:02:54.928 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:02:54.930 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:54.931 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:54.932 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:54.933 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:54.933 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:54.933 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:54.935 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:54.935 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:54.936 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:54.937 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:54.937 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:54.938 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:54.938 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:02:54.938 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:02:54.938 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:54.938 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:02:55.908 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles/1
+2026-08-27 17:02:55.908 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:02:55.909 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:55.909 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:02:55.909 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:55.909 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:02:55.911 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:55.911 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:02:55.911 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:55.911 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:02:55.912 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.912 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.912 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:55.912 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:02:55.913 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:55.913 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:55.913 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.913 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.913 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:55.913 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:55.914 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:55.914 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:02:55.914 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.914 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.915 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:55.916 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:02:55.916 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:02:55.917 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles/1
+2026-08-27 17:02:55.917 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:02:55.917 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:02:55.918 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:02:55.919 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.919 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:02:55.919 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:02:55.920 [http-nio-8080-exec-4] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==>  Preparing: SELECT id,role_id,menu_id FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:02:55.920 [http-nio-8080-exec-4] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:02:55.923 [http-nio-8080-exec-4] DEBUG c.p.m.SysRoleMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:03:16.414 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles/1/assign
+2026-08-27 17:03:16.420 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:16.420 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:16.420 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:16.420 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:16.420 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:16.424 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:16.424 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:16.424 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:16.424 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:16.424 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:16.424 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:16.428 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 22
+2026-08-27 17:03:16.428 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles/1/assign
+2026-08-27 17:03:16.456 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==>  Preparing: DELETE FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:03:16.456 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==> Parameters: 1(Long)
+2026-08-27 17:03:16.456 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.delete - <==    Updates: 22
+2026-08-27 17:03:16.461 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.461 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 22(Long)
+2026-08-27 17:03:16.461 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.461 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.461 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 2(Long)
+2026-08-27 17:03:16.461 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 3(Long)
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 4(Long)
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 5(Long)
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.467 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 6(Long)
+2026-08-27 17:03:16.471 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.471 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.472 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 7(Long)
+2026-08-27 17:03:16.473 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.473 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.473 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 8(Long)
+2026-08-27 17:03:16.473 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.475 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.475 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 9(Long)
+2026-08-27 17:03:16.475 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.475 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.475 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 10(Long)
+2026-08-27 17:03:16.476 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.476 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.476 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 11(Long)
+2026-08-27 17:03:16.476 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.478 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.478 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 12(Long)
+2026-08-27 17:03:16.479 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.479 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.479 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 14(Long)
+2026-08-27 17:03:16.479 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.480 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.480 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 15(Long)
+2026-08-27 17:03:16.480 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.480 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.480 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 16(Long)
+2026-08-27 17:03:16.480 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.482 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.482 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 18(Long)
+2026-08-27 17:03:16.483 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 19(Long)
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 20(Long)
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 21(Long)
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.484 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.487 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 1(Long)
+2026-08-27 17:03:16.487 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.487 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:16.487 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 13(Long)
+2026-08-27 17:03:16.487 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.492 [http-nio-8080-exec-6] DEBUG c.pes.mapper.SysOperLogMapper.insert - ==>  Preparing: INSERT INTO sys_oper_log ( username, operation, class_name, method_name, time, ip, status, create_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2026-08-27 17:03:16.492 [http-nio-8080-exec-6] DEBUG c.pes.mapper.SysOperLogMapper.insert - ==> Parameters: admin(String), 分配角色权限(String), RoleController(String), assignMenu(String), 40(Long), 0:0:0:0:0:0:0:1(String), 1(Integer), 2026-08-27T17:03:16.492132900(LocalDateTime)
+2026-08-27 17:03:16.496 [http-nio-8080-exec-6] DEBUG c.pes.mapper.SysOperLogMapper.insert - <==    Updates: 1
+2026-08-27 17:03:16.496 [http-nio-8080-exec-6] INFO  com.pes.aspect.LogAspect - [操作日志] 用户: admin, 操作: 分配角色权限, 耗时: 40ms
+2026-08-27 17:03:16.509 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:03:16.513 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:16.513 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:16.514 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:16.514 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:16.514 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:16.514 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:16.515 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:16.515 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:16.515 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:16.516 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:16.516 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:16.518 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-27 17:03:16.518 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:03:16.519 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:03:16.519 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:03:16.520 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:03:17.489 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:03:17.489 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles/1
+2026-08-27 17:03:17.489 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:17.489 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:17.489 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:17.489 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:17.492 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:17.492 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:17.492 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:17.492 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:17.492 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.494 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.494 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:17.494 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:17.495 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:17.495 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:17.495 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.495 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.495 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:17.495 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:17.495 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:17.495 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:17.495 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.495 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.497 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-27 17:03:17.497 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-27 17:03:17.497 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:03:17.498 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles/1
+2026-08-27 17:03:17.498 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:17.498 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:03:17.498 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:03:17.498 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.499 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:17.500 [http-nio-8080-exec-9] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==>  Preparing: SELECT id,role_id,menu_id FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:03:17.500 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:03:17.500 [http-nio-8080-exec-9] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:17.500 [http-nio-8080-exec-9] DEBUG c.p.m.SysRoleMenuMapper.selectList - <==      Total: 21
+2026-08-27 17:03:20.360 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles/1/assign
+2026-08-27 17:03:20.362 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:20.362 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:20.362 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:20.362 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:20.362 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:20.365 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:20.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:20.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:20.366 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:20.366 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:20.366 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:20.368 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-27 17:03:20.369 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles/1/assign
+2026-08-27 17:03:20.369 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==>  Preparing: DELETE FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:03:20.369 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==> Parameters: 1(Long)
+2026-08-27 17:03:20.371 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.delete - <==    Updates: 21
+2026-08-27 17:03:20.371 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.371 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 22(Long)
+2026-08-27 17:03:20.372 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.372 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.372 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 2(Long)
+2026-08-27 17:03:20.372 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 3(Long)
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 4(Long)
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 5(Long)
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.374 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 6(Long)
+2026-08-27 17:03:20.377 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.377 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.377 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 7(Long)
+2026-08-27 17:03:20.377 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.378 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.378 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 8(Long)
+2026-08-27 17:03:20.378 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 9(Long)
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 10(Long)
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 11(Long)
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.379 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 12(Long)
+2026-08-27 17:03:20.382 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.382 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.382 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 14(Long)
+2026-08-27 17:03:20.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 15(Long)
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 16(Long)
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 18(Long)
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 19(Long)
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 20(Long)
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 21(Long)
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 1(Long)
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:03:20.384 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 13(Long)
+2026-08-27 17:03:20.390 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.391 [http-nio-8080-exec-10] DEBUG c.pes.mapper.SysOperLogMapper.insert - ==>  Preparing: INSERT INTO sys_oper_log ( username, operation, class_name, method_name, time, ip, status, create_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2026-08-27 17:03:20.394 [http-nio-8080-exec-10] DEBUG c.pes.mapper.SysOperLogMapper.insert - ==> Parameters: admin(String), 分配角色权限(String), RoleController(String), assignMenu(String), 22(Long), 0:0:0:0:0:0:0:1(String), 1(Integer), 2026-08-27T17:03:20.391312400(LocalDateTime)
+2026-08-27 17:03:20.394 [http-nio-8080-exec-10] DEBUG c.pes.mapper.SysOperLogMapper.insert - <==    Updates: 1
+2026-08-27 17:03:20.394 [http-nio-8080-exec-10] INFO  com.pes.aspect.LogAspect - [操作日志] 用户: admin, 操作: 分配角色权限, 耗时: 22ms
+2026-08-27 17:03:20.407 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:03:20.407 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:20.407 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:20.407 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:20.410 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:20.413 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-27 17:03:20.413 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:03:20.414 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:03:20.414 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:03:20.414 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:03:21.810 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:03:21.810 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles/1
+2026-08-27 17:03:21.812 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:21.812 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:03:21.813 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:21.813 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:03:21.813 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:21.813 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:03:21.814 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:21.814 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:03:21.814 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.814 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.815 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:21.815 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:03:21.815 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:21.815 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:21.815 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.815 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.815 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:21.815 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:21.815 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:21.815 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:03:21.815 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.815 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.816 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-27 17:03:21.816 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 21
+2026-08-27 17:03:21.818 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:03:21.818 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles/1
+2026-08-27 17:03:21.818 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:03:21.818 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:03:21.818 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:03:21.818 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.819 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:03:21.819 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 22
+2026-08-27 17:03:21.820 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==>  Preparing: SELECT id,role_id,menu_id FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:03:21.820 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:03:21.821 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - <==      Total: 21
+2026-08-27 17:12:29.241 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 17:12:29.246 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 17:12:31.588 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-27 17:12:31.620 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 18568 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-27 17:12:31.620 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-27 17:12:31.620 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-27 17:12:32.230 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 17:12:32.232 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 17:12:32.261 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2026-08-27 17:12:32.976 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-27 17:12:32.981 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-27 17:12:32.983 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 17:12:32.983 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-27 17:12:33.031 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-27 17:12:33.031 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1379 ms
+2026-08-27 17:12:33.162 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 17:12:33.357 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6851b296
+2026-08-27 17:12:33.359 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 17:12:33.582 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-27 17:12:34.161 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-27 17:12:34.494 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@493250cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24888d8b, org.springframework.security.web.context.SecurityContextHolderFilter@4f629aa4, org.springframework.security.web.header.HeaderWriterFilter@3e0b1f03, org.springframework.web.filter.CorsFilter@4449a60b, com.pes.security.filter.JwtAuthenticationFilter@62b786dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f348e10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f22ce2a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@750b200b, org.springframework.security.web.session.SessionManagementFilter@6094ad4, org.springframework.security.web.access.ExceptionTranslationFilter@6e664075, org.springframework.security.web.access.intercept.AuthorizationFilter@1c09bb7a]
+2026-08-27 17:12:34.735 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-27 17:12:34.744 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-27 17:12:34.750 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.589 seconds (process running for 4.247)
+2026-08-27 17:12:44.178 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-27 17:12:44.183 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-27 17:12:46.197 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-27 17:12:46.224 [main] INFO  com.pes.PesApplication - Starting PesApplication using Java 17.0.12 with PID 5880 (E:\PES\pes-java\target\classes started by ASUS in E:\PES)
+2026-08-27 17:12:46.225 [main] DEBUG com.pes.PesApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-08-27 17:12:46.225 [main] INFO  com.pes.PesApplication - The following 1 profile is active: "dev"
+2026-08-27 17:12:46.720 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-27 17:12:46.722 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-27 17:12:46.747 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-08-27 17:12:47.291 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-27 17:12:47.296 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-27 17:12:47.297 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-27 17:12:47.297 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-08-27 17:12:47.344 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-27 17:12:47.344 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1088 ms
+2026-08-27 17:12:47.468 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-27 17:12:47.676 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ff21443
+2026-08-27 17:12:47.677 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-27 17:12:47.894 [main] DEBUG c.p.s.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-08-27 17:12:48.445 [main] INFO  com.pes.utils.RedisUtils - Redis 连接成功
+2026-08-27 17:12:48.774 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24d097c8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f69d246, org.springframework.security.web.context.SecurityContextHolderFilter@2aa65672, org.springframework.security.web.header.HeaderWriterFilter@255d4d7, org.springframework.web.filter.CorsFilter@7f030c72, com.pes.security.filter.JwtAuthenticationFilter@15914bb5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56ed2baf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24ac87a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bfdc92b, org.springframework.security.web.session.SessionManagementFilter@45482f82, org.springframework.security.web.access.ExceptionTranslationFilter@65b1693c, org.springframework.security.web.access.intercept.AuthorizationFilter@6c930e7e]
+2026-08-27 17:12:49.004 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-27 17:12:49.014 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-08-27 17:12:49.019 [main] INFO  com.pes.PesApplication - Started PesApplication in 3.186 seconds (process running for 3.719)
+2026-08-27 17:12:53.800 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-27 17:12:53.800 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-27 17:12:53.800 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-08-27 17:12:53.806 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:12:53.924 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:12:53.936 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:12:53.954 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:12:53.957 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:12:53.957 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:12:53.958 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:12:53.959 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:12:53.959 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:12:53.960 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:12:53.961 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:12:53.961 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:12:53.968 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:12:53.980 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:12:53.993 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:12:53.993 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:12:53.997 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 27
+2026-08-27 17:12:54.378 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:12:54.381 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:12:54.381 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:12:54.382 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:12:54.383 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:12:54.383 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.384 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:12:54.386 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:12:54.386 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.388 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:12:54.388 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:12:54.388 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.391 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:12:54.393 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:12:54.395 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:12:54.400 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:12:54.400 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:12:54.401 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:12:54.403 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:12:54.404 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.405 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:12:54.405 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:12:54.406 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:12:54.406 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:12:54.406 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.407 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:12:54.407 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:12:54.408 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:12:54.408 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.411 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:12:54.413 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:12:54.414 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:12:54.414 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:12:54.417 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 27
+2026-08-27 17:12:54.581 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /dashboard/stats
+2026-08-27 17:12:54.591 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:12:54.591 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:12:54.593 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:12:54.596 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:12:54.597 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.599 [http-nio-8080-exec-4] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:12:54.599 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:12:54.599 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.600 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:12:54.600 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:12:54.600 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:12:54.604 [http-nio-8080-exec-4] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:12:54.606 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /dashboard/stats
+2026-08-27 17:12:54.608 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_user
+2026-08-27 17:12:54.608 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectCount - ==> Parameters: 
+2026-08-27 17:12:54.611 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysUserMapper.selectCount - <==      Total: 1
+2026-08-27 17:12:54.611 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_role
+2026-08-27 17:12:54.611 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectCount - ==> Parameters: 
+2026-08-27 17:12:54.613 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysRoleMapper.selectCount - <==      Total: 1
+2026-08-27 17:12:54.614 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysMenuMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM sys_menu WHERE (type = ? AND component IS NOT NULL AND component <> ? AND component <> ?)
+2026-08-27 17:12:54.615 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysMenuMapper.selectCount - ==> Parameters: 1(Integer), (String), Layout(String)
+2026-08-27 17:12:54.617 [http-nio-8080-exec-4] DEBUG c.p.mapper.SysMenuMapper.selectCount - <==      Total: 1
+2026-08-27 17:13:00.814 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:13:00.818 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:00.818 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:00.818 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:00.819 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:00.819 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:00.821 [http-nio-8080-exec-6] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:00.821 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:00.821 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:00.821 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:00.821 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:00.821 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:00.823 [http-nio-8080-exec-6] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:13:00.823 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:13:00.823 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:13:00.823 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:13:00.828 [http-nio-8080-exec-6] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 27
+2026-08-27 17:13:07.627 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2026-08-27 17:13:07.630 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:07.631 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:07.632 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.632 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:07.633 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:07.633 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.634 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.634 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:07.634 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.635 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:07.635 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:07.637 [http-nio-8080-exec-5] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:13:07.639 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2026-08-27 17:13:07.640 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user ORDER BY id ASC
+2026-08-27 17:13:07.640 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: 
+2026-08-27 17:13:07.641 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 8
+2026-08-27 17:13:07.642 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.643 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:07.643 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.643 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.643 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:07.645 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.645 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.645 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 2(Long)
+2026-08-27 17:13:07.646 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.646 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.646 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:13:07.646 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.647 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.647 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 3(Long)
+2026-08-27 17:13:07.647 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.648 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.648 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:13:07.649 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.649 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.649 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 4(Long)
+2026-08-27 17:13:07.649 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.649 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.649 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:13:07.649 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.653 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.653 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 5(Long)
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 3(Long)
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 6(Long)
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 2(Long)
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.654 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 7(Long)
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 4(Long)
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?) LIMIT 1
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 8(Long)
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:07.660 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:07.664 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 5(Long)
+2026-08-27 17:13:07.664 [http-nio-8080-exec-5] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:08.187 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:13:08.189 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:08.189 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:08.190 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:08.191 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:08.191 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:08.193 [http-nio-8080-exec-7] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:08.194 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:08.194 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:08.194 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:08.194 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:08.196 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:08.196 [http-nio-8080-exec-7] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:13:08.196 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:13:08.196 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:13:08.196 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:13:08.202 [http-nio-8080-exec-7] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:13:09.456 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:13:09.456 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles/1
+2026-08-27 17:13:09.456 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:09.456 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:09.456 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:09.456 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:09.462 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:09.462 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:09.463 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:09.463 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:09.463 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.463 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.464 [http-nio-8080-exec-9] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:09.464 [http-nio-8080-exec-8] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:09.465 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:09.465 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:09.465 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.465 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.467 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:09.467 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:09.467 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:09.467 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:09.467 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.467 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.470 [http-nio-8080-exec-8] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:13:09.470 [http-nio-8080-exec-9] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:13:09.470 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:13:09.472 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles/1
+2026-08-27 17:13:09.472 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:13:09.472 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:13:09.473 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:09.474 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.474 [http-nio-8080-exec-9] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 27
+2026-08-27 17:13:09.475 [http-nio-8080-exec-8] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:09.475 [http-nio-8080-exec-8] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==>  Preparing: SELECT id,role_id,menu_id FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:13:09.475 [http-nio-8080-exec-8] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:09.475 [http-nio-8080-exec-8] DEBUG c.p.m.SysRoleMenuMapper.selectList - <==      Total: 27
+2026-08-27 17:13:15.327 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /roles/1/assign
+2026-08-27 17:13:15.334 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:15.334 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:15.334 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:15.334 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:15.334 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:15.334 [http-nio-8080-exec-10] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:15.337 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:15.337 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:15.337 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:15.338 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:15.338 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:15.339 [http-nio-8080-exec-10] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 27
+2026-08-27 17:13:15.340 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /roles/1/assign
+2026-08-27 17:13:15.362 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==>  Preparing: DELETE FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:13:15.362 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.delete - ==> Parameters: 1(Long)
+2026-08-27 17:13:15.364 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.delete - <==    Updates: 27
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 22(Long)
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 1(Long)
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 2(Long)
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.365 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 3(Long)
+2026-08-27 17:13:15.371 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.371 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.371 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 4(Long)
+2026-08-27 17:13:15.372 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.372 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.372 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 5(Long)
+2026-08-27 17:13:15.373 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.373 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.373 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 6(Long)
+2026-08-27 17:13:15.373 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.373 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.373 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 7(Long)
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 8(Long)
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 9(Long)
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 10(Long)
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 11(Long)
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 12(Long)
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 13(Long)
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.375 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 14(Long)
+2026-08-27 17:13:15.382 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.382 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 15(Long)
+2026-08-27 17:13:15.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 16(Long)
+2026-08-27 17:13:15.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.383 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 17(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 19(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 23(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 24(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 25(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 21(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 27(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 18(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==>  Preparing: INSERT INTO sys_role_menu ( role_id, menu_id ) VALUES ( ?, ? )
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - ==> Parameters: 1(Long), 20(Long)
+2026-08-27 17:13:15.386 [http-nio-8080-exec-10] DEBUG c.p.mapper.SysRoleMenuMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.403 [http-nio-8080-exec-10] DEBUG c.pes.mapper.SysOperLogMapper.insert - ==>  Preparing: INSERT INTO sys_oper_log ( username, operation, class_name, method_name, time, ip, status, create_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2026-08-27 17:13:15.403 [http-nio-8080-exec-10] DEBUG c.pes.mapper.SysOperLogMapper.insert - ==> Parameters: admin(String), 分配角色权限(String), RoleController(String), assignMenu(String), 42(Long), 0:0:0:0:0:0:0:1(String), 1(Integer), 2026-08-27T17:13:15.402745700(LocalDateTime)
+2026-08-27 17:13:15.407 [http-nio-8080-exec-10] DEBUG c.pes.mapper.SysOperLogMapper.insert - <==    Updates: 1
+2026-08-27 17:13:15.407 [http-nio-8080-exec-10] INFO  com.pes.aspect.LogAspect - [操作日志] 用户: admin, 操作: 分配角色权限, 耗时: 42ms
+2026-08-27 17:13:15.420 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:15.422 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:15.426 [http-nio-8080-exec-1] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 26
+2026-08-27 17:13:15.427 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles
+2026-08-27 17:13:15.428 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role ORDER BY id ASC
+2026-08-27 17:13:15.428 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - ==> Parameters: 
+2026-08-27 17:13:15.428 [http-nio-8080-exec-1] DEBUG c.p.mapper.SysRoleMapper.selectList - <==      Total: 5
+2026-08-27 17:13:16.959 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /roles/1
+2026-08-27 17:13:16.959 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /menus/tree
+2026-08-27 17:13:16.960 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:16.960 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==>  Preparing: SELECT id,username,password,nickname,email,phone,status,create_time,update_time,version FROM sys_user WHERE (username = ?)
+2026-08-27 17:13:16.961 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:16.961 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - ==> Parameters: admin(String)
+2026-08-27 17:13:16.962 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:16.962 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysUserMapper.selectList - <==      Total: 1
+2026-08-27 17:13:16.962 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:16.962 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==>  Preparing: SELECT id,user_id,role_id FROM sys_user_role WHERE (user_id = ?)
+2026-08-27 17:13:16.962 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.962 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.964 [http-nio-8080-exec-2] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:16.964 [http-nio-8080-exec-3] DEBUG c.p.m.SysUserRoleMapper.selectList - <==      Total: 1
+2026-08-27 17:13:16.964 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:16.964 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:16.964 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.964 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.965 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:16.965 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:16.965 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:16.965 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==>  Preparing: SELECT m.* FROM sys_menu m INNER JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = ?
+2026-08-27 17:13:16.965 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.965 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.967 [http-nio-8080-exec-3] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 26
+2026-08-27 17:13:16.967 [http-nio-8080-exec-2] DEBUG c.p.m.S.selectMenuByRoleId - <==      Total: 26
+2026-08-27 17:13:16.968 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /menus/tree
+2026-08-27 17:13:16.968 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /roles/1
+2026-08-27 17:13:16.968 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - ==>  Preparing: SELECT id,parent_id,name,path,component,icon,permission,sort,type,status,create_time,update_time,version FROM sys_menu ORDER BY sort ASC
+2026-08-27 17:13:16.968 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==>  Preparing: SELECT id,name,code,description,status,create_time,update_time,version FROM sys_role WHERE id=?
+2026-08-27 17:13:16.968 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - ==> Parameters: 
+2026-08-27 17:13:16.968 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.969 [http-nio-8080-exec-3] DEBUG c.p.mapper.SysRoleMapper.selectById - <==      Total: 1
+2026-08-27 17:13:16.969 [http-nio-8080-exec-2] DEBUG c.p.mapper.SysMenuMapper.selectList - <==      Total: 27
+2026-08-27 17:13:16.969 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==>  Preparing: SELECT id,role_id,menu_id FROM sys_role_menu WHERE (role_id = ?)
+2026-08-27 17:13:16.970 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - ==> Parameters: 1(Long)
+2026-08-27 17:13:16.970 [http-nio-8080-exec-3] DEBUG c.p.m.SysRoleMenuMapper.selectList - <==      Total: 26
