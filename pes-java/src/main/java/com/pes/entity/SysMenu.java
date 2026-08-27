@@ -38,7 +38,7 @@ public class SysMenu {
     /** 排序号 */
     private Integer sort;
 
-    /** 类型：M-目录，C-菜单，F-按钮 */
+    /** 类型：0-目录(分组)，1-菜单(页面)，2-按钮(操作权限) */
     private Integer type;
 
     /** 状态：1-启用，0-禁用 */

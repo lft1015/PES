@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <el-dialog
     v-model="visible"
     :title="''"
@@ -75,11 +75,12 @@
       >
         <template #default="{ node, data }">
           <span class="tree-node">
-            <el-icon class="node-icon" :class="data.type === 2 ? 'is-button' : 'is-menu'">
+            <el-icon class="node-icon" :class="data.type === 0 ? 'is-directory' : (data.type === 2 ? 'is-button' : 'is-menu')">
               <component :is="getNodeIcon(data)" />
             </el-icon>
             <span class="node-label">{{ node.label }}</span>
-            <el-tag v-if="data.type === 2" size="small" type="info" class="node-tag">按钮</el-tag>
+            <el-tag v-if="data.type === 0" size="small" type="warning" class="node-tag">目录</el-tag>
+            <el-tag v-else-if="data.type === 2" size="small" type="info" class="node-tag">按钮</el-tag>
             <el-tag v-else size="small" type="success" class="node-tag">菜单</el-tag>
           </span>
         </template>
@@ -110,7 +111,7 @@ import { getRoleById, assignMenu } from '@/api/role'
 import { ElMessage } from 'element-plus'
 import {
   Key, Search, Select, CloseBold, Fold, Check,
-  Menu, Link, Operation, Grid, Setting, Document
+  Menu, Link, Operation, Grid, Setting, Document, Folder
 } from '@element-plus/icons-vue'
 
 const props = defineProps({
@@ -144,6 +145,7 @@ const checkedCount = computed(() => {
 })
 
 const getNodeIcon = (data) => {
+  if (data.type === 0) return 'Folder'
   if (data.type === 2) return 'Operation'
   const iconMap = {
     'Setting': 'Setting',
@@ -192,7 +194,13 @@ const loadData = async () => {
 
     if (roleRes && roleRes.menuIds && roleRes.menuIds.length > 0) {
       await nextTick()
-      treeRef.value?.setCheckedKeys(roleRes.menuIds)
+      const leafIds = roleRes.menuIds.filter(id => {
+        const node = treeRef.value?.getNode(id)
+        return node && node.data && node.data.type === 2
+      })
+      if (leafIds.length > 0) {
+        treeRef.value?.setCheckedKeys(leafIds)
+      }
     }
   } catch (error) {
     ElMessage.error('加载菜单数据失败')
@@ -353,6 +361,10 @@ onMounted(() => {
 .node-icon {
   font-size: 15px;
   flex-shrink: 0;
+}
+
+.node-icon.is-directory {
+  color: #E6A23C;
 }
 
 .node-icon.is-menu {

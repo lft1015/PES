@@ -28,15 +28,9 @@
         @select="handleMenuSelect"
       >
         <template v-for="menu in menusWithIcons" :key="menu.id">
-          <el-menu-item
-            v-if="!menu.children || menu.children.length === 0"
-            :index="menu.path"
-          >
-            <el-icon v-if="menu._icon" class="menu-icon"><component :is="menu._icon" /></el-icon>
-            <span>{{ menu.name }}</span>
-          </el-menu-item>
+          <!-- 目录（type=0）：不可点击，仅作为分组，渲染为 el-sub-menu -->
           <el-sub-menu
-            v-else
+            v-if="menu.type === 0"
             :index="String(menu.id)"
             popper-class="dora-popper"
           >
@@ -53,6 +47,14 @@
               <span>{{ child.name }}</span>
             </el-menu-item>
           </el-sub-menu>
+          <!-- 菜单（type=1）：可点击访问，渲染为 el-menu-item -->
+          <el-menu-item
+            v-else
+            :index="menu.path"
+          >
+            <el-icon v-if="menu._icon" class="menu-icon"><component :is="menu._icon" /></el-icon>
+            <span>{{ menu.name }}</span>
+          </el-menu-item>
         </template>
       </el-menu>
     </nav>
@@ -98,18 +100,24 @@ watch(collapsed, (val) => {
   appStore.setSidebarCollapsed(val)
 })
 
-// 递归过滤菜单：只保留 type=1 且当前用户拥有其权限的菜单
+// 递归过滤菜单：type=0(目录) 和 type=1(菜单) 参与侧边栏渲染，type=2(按钮) 不显示
 const filterByPermission = (menus) => {
   const permissions = userStore.permissions || []
   return menus
-    .filter(m => m && m.type === 1)
-    .filter(m => !m.permission || permissions.includes(m.permission))
+    .filter(m => m && (m.type === 0 || m.type === 1))
+    .filter(m => {
+      if (m.type === 0) return true
+      return !m.permission || permissions.includes(m.permission)
+    })
     .map(m => ({
       ...m,
       _icon: getIcon(m.icon),
       children: m.children ? filterByPermission(m.children) : []
     }))
-    .filter(m => m.children.length > 0 || m.path)
+    .filter(m => {
+      if (m.type === 0) return m.children.length > 0
+      return m.children.length > 0 || m.path
+    })
 }
 
 // 顶层菜单，根据权限过滤，为每个节点预解析图标组件

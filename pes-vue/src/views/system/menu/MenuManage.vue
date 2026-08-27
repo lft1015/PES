@@ -90,8 +90,8 @@
         </el-table-column>
         <el-table-column prop="type" label="类型" min-width="70" align="center">
           <template #default="{ row }">
-            <el-tag :type="row.type === 1 ? '' : 'info'" size="small">
-              {{ row.type === 1 ? '菜单' : '按钮' }}
+            <el-tag :type="row.type === 0 ? 'warning' : (row.type === 1 ? '' : 'info')" size="small">
+              {{ row.type === 0 ? '目录' : (row.type === 1 ? '菜单' : '按钮') }}
             </el-tag>
           </template>
         </el-table-column>
@@ -159,18 +159,19 @@
         </el-form-item>
         <el-form-item label="菜单类型" prop="type">
           <el-radio-group v-model="form.type">
+            <el-radio :value="0">目录</el-radio>
             <el-radio :value="1">菜单</el-radio>
             <el-radio :value="2">按钮</el-radio>
           </el-radio-group>
+        </el-form-item>
+        <el-form-item v-if="form.type === 0 || form.type === 1" label="图标" prop="icon">
+          <el-input v-model="form.icon" placeholder="Element Plus 图标名，如 Setting、User" />
         </el-form-item>
         <el-form-item v-if="form.type === 1" label="路由路径" prop="path">
           <el-input v-model="form.path" placeholder="请输入路由路径，如 /system/user" />
         </el-form-item>
         <el-form-item v-if="form.type === 1" label="组件路径" prop="component">
           <el-input v-model="form.component" placeholder="请输入组件路径，如 system/user/index" />
-        </el-form-item>
-        <el-form-item v-if="form.type === 1" label="图标" prop="icon">
-          <el-input v-model="form.icon" placeholder="Element Plus 图标名，如 Setting、User" />
         </el-form-item>
         <el-form-item label="权限标识" prop="permission">
           <el-input v-model="form.permission" placeholder="如 user:list、role:add" />
@@ -254,7 +255,7 @@ const parentMenuTree = computed(() => {
   const filterDir = (nodes) => {
     const result = []
     for (const node of nodes) {
-      if (node.type === 1) { // 只显示目录/菜单类型
+      if (node.type === 0 || node.type === 1) { // 目录和菜单都可作为上级
         result.push({
           id: node.id,
           name: node.name,
