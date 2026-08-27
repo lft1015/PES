@@ -84,14 +84,14 @@
               <el-tag size="small" effect="plain">{{ row.methodName || '-' }}</el-tag>
             </template>
           </el-table-column>
-          <el-table-column prop="time" label="耗时" min-width="80" align="center">
+          <el-table-column prop="time" label="耗时" min-min-width="80" align="center">
             <template #default="{ row }">
               <el-tag :type="row.time > 200 ? 'warning' : row.time > 500 ? 'danger' : 'success'" size="small">
                 {{ row.time }}ms
               </el-tag>
             </template>
           </el-table-column>
-          <el-table-column prop="status" label="状态" min-width="80" align="center">
+          <el-table-column prop="status" label="状态" min-min-width="80" align="center">
             <template #default="{ row }">
               <el-tag :type="row.status === 1 ? 'success' : 'danger'" size="small" effect="dark">
                 {{ row.status === 1 ? '成功' : '失败' }}
@@ -103,10 +103,10 @@
               {{ row.createTime ? row.createTime.replace('T', ' ') : '-' }}
             </template>
           </el-table-column>
-          <el-table-column label="操作" width="80" fixed="right" align="center">
+          <el-table-column label="操作" min-width="80" fixed="right" align="center">
           <template #default="{ row }">
-            <el-button size="small" type="danger" link @click="handleDelete(row.id)">
-              <el-icon><Delete /></el-icon>
+            <el-button size="small" type="danger" @click="handleDelete(row.id)">
+              <el-icon><Delete /></el-icon> 删除
             </el-button>
           </template>
         </el-table-column>
