@@ -23,7 +23,7 @@
         <el-button @click="handleReset"><el-icon><Refresh /></el-icon> 重置</el-button>
       </div>
       <div class="toolbar-right">
-        <el-button type="success" @click="openCreateModal"><el-icon><Plus /></el-icon> 新增角色</el-button>
+        <el-button type="success" v-if="checkPermission('role:add')" @click="openCreateModal"><el-icon><Plus /></el-icon> 新增角色</el-button>
       </div>
     </div>
 
@@ -55,13 +55,13 @@
           </el-table-column>
           <el-table-column label="操作" min-width="230" align="center">
             <template #default="scope">
-              <el-button size="small" type="primary" @click="openEditModal(scope.row)">
+              <el-button size="small" type="primary" v-if="checkPermission('role:edit')" @click="openEditModal(scope.row)">
                 <el-icon><Edit /></el-icon> 编辑
               </el-button>
-              <el-button size="small" type="warning" @click="openAssignModal(scope.row)">
+              <el-button size="small" type="warning" v-if="checkPermission('role:assign')" @click="openAssignModal(scope.row)">
                 <el-icon><Key /></el-icon> 分配权限
               </el-button>
-              <el-button size="small" type="danger" @click="handleDelete(scope.row.id)">
+              <el-button size="small" type="danger" v-if="checkPermission('role:delete')" @click="handleDelete(scope.row.id)">
                 <el-icon><Delete /></el-icon> 删除
               </el-button>
             </template>
@@ -112,6 +112,8 @@ import { getRoleList, createRole, updateRole, deleteRole } from '@/api/role'
 import { ElMessage } from 'element-plus'
 import { UserFilled, Search, Refresh, Plus, Edit, Key, Delete } from '@element-plus/icons-vue'
 import RolePerm from './RolePerm.vue'
+import { usePermission } from '@/composables/usePermission'
+const { checkPermission } = usePermission()
 
 const allData = ref([])
 const loading = ref(false)

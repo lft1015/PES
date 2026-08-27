@@ -38,7 +38,7 @@
           <el-icon><Fold v-if="allExpanded" /><Expand v-else /></el-icon>
           {{ allExpanded ? '折叠全部' : '展开全部' }}
         </el-button>
-        <el-button type="success" @click="openCreateModal">
+        <el-button type="success" v-if="checkPermission('menu:add')" @click="openCreateModal">
           <el-icon><Plus /></el-icon> 新增菜单
         </el-button>
       </div>
@@ -109,13 +109,13 @@
         </el-table-column>
         <el-table-column label="操作" min-width="280" fixed="right" align="center">
           <template #default="{ row }">
-            <el-button size="small" type="primary" @click="openEditModal(row)">
+            <el-button size="small" type="primary" v-if="checkPermission('menu:edit')" @click="openEditModal(row)">
               <el-icon><Edit /></el-icon> 编辑
             </el-button>
-            <el-button size="small" type="success" @click="openAddChildModal(row)">
+            <el-button size="small" type="success" v-if="checkPermission('menu:add')" @click="openAddChildModal(row)">
               <el-icon><CirclePlus /></el-icon> 添加子菜单
             </el-button>
-            <el-button size="small" type="danger" @click="handleDelete(row.id)">
+            <el-button size="small" type="danger" v-if="checkPermission('menu:delete')" @click="handleDelete(row.id)">
               <el-icon><Delete /></el-icon> 删除
             </el-button>
           </template>
@@ -202,6 +202,8 @@ import { getMenuTree, createMenu, updateMenu, deleteMenu } from '@/api/menu'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Menu, Search, Refresh, Fold, Expand, Plus, Edit, CirclePlus, Delete } from '@element-plus/icons-vue'
 import { getIcon } from '@/utils/iconMap'
+import { usePermission } from '@/composables/usePermission'
+const { checkPermission } = usePermission()
 
 // ==================== 数据 ====================
 const menuTree = ref([])

@@ -79,6 +79,7 @@
 import { ref, computed, inject, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAppStore } from '@/store/modules/app'
+import { useUserStore } from '@/store/modules/user'
 import { Expand, Fold } from '@element-plus/icons-vue'
 import { getIcon } from '@/utils/iconMap'
 import logoImg from '@/img/smile.jpg'
@@ -87,6 +88,7 @@ import decorImg from '@/img/together.jpg'
 const route = useRoute()
 const router = useRouter()
 const appStore = useAppStore()
+const userStore = useUserStore()
 
 // 通过 provide/inject 与 Header 共享折叠状态
 const collapsed = inject('sidebarCollapsed', ref(false))
@@ -96,10 +98,23 @@ watch(collapsed, (val) => {
   appStore.setSidebarCollapsed(val)
 })
 
-// 顶层菜单，为每个节点预解析图标组件
+// 递归过滤菜单：只保留 type=1 且当前用户拥有其权限的菜单
+const filterByPermission = (menus) => {
+  const permissions = userStore.permissions || []
+  return menus
+    .filter(m => m && m.type === 1)
+    .filter(m => !m.permission || permissions.includes(m.permission))
+    .map(m => ({
+      ...m,
+      _icon: getIcon(m.icon),
+      children: m.children ? filterByPermission(m.children) : []
+    }))
+    .filter(m => m.children.length > 0 || m.path)
+}
+
+// 顶层菜单，根据权限过滤，为每个节点预解析图标组件
 const menusWithIcons = computed(() => {
-  const list = (appStore.menuList || []).filter(m => m && m.type === 1 && !m.parentId)
-  return list.map(m => ({ ...m, _icon: getIcon(m.icon), children: (m.children || []).map(c => ({ ...c, _icon: getIcon(c.icon) })) }))
+  return filterByPermission(appStore.menuList || [])
 })
 
 const activeMenu = computed(() => route.path)

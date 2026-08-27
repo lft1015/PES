@@ -46,10 +46,10 @@
         </el-button>
       </div>
       <div class="toolbar-right">
-        <el-button type="danger" plain @click="handleBatchDelete" :disabled="selectedIds.length === 0">
+        <el-button type="danger" plain v-if="checkPermission('log:delete')" @click="handleBatchDelete" :disabled="selectedIds.length === 0">
           <el-icon><Delete /></el-icon> 批量删除 ({{ selectedIds.length }})
         </el-button>
-        <el-button type="danger" @click="handleClear">
+        <el-button type="danger" v-if="checkPermission('log:delete')" @click="handleClear">
           <el-icon><DeleteFilled /></el-icon> 清空日志
         </el-button>
       </div>
@@ -99,7 +99,7 @@
           </el-table-column>
           <el-table-column label="操作" min-width="80" fixed="right" align="center">
           <template #default="{ row }">
-            <el-button size="small" type="danger" @click="handleDelete(row.id)">
+            <el-button size="small" type="danger" v-if="checkPermission('log:delete')" @click="handleDelete(row.id)">
               <el-icon><Delete /></el-icon> 删除
             </el-button>
           </template>
@@ -127,6 +127,8 @@
 <script setup>
 import { ref, reactive, watch, onMounted } from 'vue'
 import { getLoginLogList, deleteLoginLog, batchDeleteLoginLog, clearLoginLog } from '@/api/log'
+import { usePermission } from '@/composables/usePermission'
+const { checkPermission } = usePermission()
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { getUserOptions } from '@/api/user'
 import {

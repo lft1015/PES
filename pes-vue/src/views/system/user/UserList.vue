@@ -23,7 +23,7 @@
         <el-button @click="handleReset"><el-icon><Refresh /></el-icon> 重置</el-button>
       </div>
       <div class="toolbar-right">
-        <el-button type="success" @click="openCreateModal"><el-icon><Plus /></el-icon> 新增用户</el-button>
+        <el-button type="success" v-if="checkPermission('user:add')" @click="openCreateModal"><el-icon><Plus /></el-icon> 新增用户</el-button>
       </div>
     </div>
 
@@ -64,10 +64,10 @@
           </el-table-column>
           <el-table-column label="操作" min-width="180" align="center">
             <template #default="scope">
-              <el-button size="small" type="primary" @click="openEditModal(scope.row)">
+              <el-button size="small" type="primary" v-if="checkPermission('user:edit')" @click="openEditModal(scope.row)">
                 <el-icon><Edit /></el-icon> 编辑
               </el-button>
-              <el-button size="small" type="danger" @click="handleDelete(scope.row.id)">
+              <el-button size="small" type="danger" v-if="checkPermission('user:delete')" @click="handleDelete(scope.row.id)">
                 <el-icon><Delete /></el-icon> 删除
               </el-button>
             </template>
@@ -102,6 +102,8 @@ import { getUserList, deleteUser } from '@/api/user'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { User, Search, Refresh, Plus, Edit, Delete } from '@element-plus/icons-vue'
 import UserForm from './UserForm.vue'
+import { usePermission } from '@/composables/usePermission'
+const { checkPermission } = usePermission()
 
 const allData = ref([])
 const loading = ref(false)
