@@ -23,6 +23,7 @@ import com.pes.service.SysLoginLogService;
 import com.pes.utils.CaptchaStore;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.pes.utils.CaptchaUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -80,6 +81,8 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
     /** 登录日志服务 */
     private final SysLoginLogService sysLoginLogService;
+    /** HTTP 请求对象，用于获取客户端 IP */
+    private final HttpServletRequest request;
 
     /** JWT 过期时间（秒），从配置文件中读取 */
     @Value("${jwt.expire}")
@@ -93,7 +96,8 @@ public class AuthServiceImpl implements AuthService {
                           SysRoleMapper sysRoleMapper, SysRoleMenuMapper sysRoleMenuMapper,
                           SysMenuMapper sysMenuMapper, CaptchaUtils captchaUtils,
                           CaptchaStore captchaStore, PasswordEncoder passwordEncoder,
-                          SysLoginLogService sysLoginLogService) {
+                          SysLoginLogService sysLoginLogService,
+                          HttpServletRequest request) {
         this.authenticationManager = authenticationManager;
         this.jwtUtils = jwtUtils;
         this.sysUserMapper = sysUserMapper;
@@ -105,6 +109,7 @@ public class AuthServiceImpl implements AuthService {
         this.captchaStore = captchaStore;
         this.passwordEncoder = passwordEncoder;
         this.sysLoginLogService = sysLoginLogService;
+        this.request = request;
     }
 
     /**
@@ -124,9 +129,12 @@ public class AuthServiceImpl implements AuthService {
                     new UsernamePasswordAuthenticationToken(req.getUsername(), req.getPassword()));
         } catch (AuthenticationException e) {
             try {
+                String ip = getClientIp();
                 SysLoginLog failLog = new SysLoginLog();
                 failLog.setUsername(req.getUsername());
+                failLog.setIp(ip);
                 failLog.setStatus(0);
+                failLog.setLoginTime(java.time.LocalDateTime.now());
                 sysLoginLogService.save(failLog);
             } catch (Exception logEx) {
                 log.warn("记录登录失败日志异常: {}", logEx.getMessage());
@@ -177,7 +185,9 @@ public class AuthServiceImpl implements AuthService {
 
         SysLoginLog loginLog = new SysLoginLog();
         loginLog.setUsername(user.getUsername());
+        loginLog.setIp(getClientIp());
         loginLog.setStatus(1);
+        loginLog.setLoginTime(java.time.LocalDateTime.now());
         sysLoginLogService.save(loginLog);
 
         return LoginResp.builder()
@@ -315,5 +325,29 @@ public class AuthServiceImpl implements AuthService {
         } finally {
             g.dispose();
         }
+    }
+
+    /**
+     * 获取客户端真实 IP 地址
+     * 优先从代理头（X-Forwarded-For, X-Real-IP）获取，否则使用 request.getRemoteAddr()
+     */
+    private String getClientIp() {
+        String ip = request.getHeader("X-Forwarded-For");
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("X-Real-IP");
+        }
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        if (ip != null && ip.contains(",")) {
+            ip = ip.split(",")[0].trim();
+        }
+        return ip;
     }
 }

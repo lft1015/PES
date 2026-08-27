@@ -52,6 +52,7 @@ public class MybatisPlusConfig {
                 LocalDateTime now = LocalDateTime.now();
                 this.setFieldValByName("createTime", now, metaObject);
                 this.setFieldValByName("updateTime", now, metaObject);
+                this.setFieldValByName("loginTime", now, metaObject);
             }
 
             @Override
