@@ -36,7 +36,7 @@ public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint {
 
         Map<String, Object> body = new HashMap<>();
         body.put("code", 401);
-        body.put("message", "未登录或Token过期");
+        body.put("msg", "未登录或Token过期");
 
         ObjectMapper mapper = new ObjectMapper();
         response.getWriter().write(mapper.writeValueAsString(body));

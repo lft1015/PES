@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Axios 请求封装
  *
  * 功能：
  *   1. 统一 baseURL（开发环境通过 Vite 代理转发 /api → 后端）
  *   2. 请求拦截：自动附加 JWT token
  *   3. 响应拦截：解包 { code, msg, data } → 直接返回 data，错误时统一提示
- *   4. 401 处理：自动清除登录态并跳转登录页
+ *   4. 401 处理：区分登录失败（有具体错误信息）和 token 过期（无具体错误信息）
  */
 
 import axios from 'axios'
@@ -61,11 +61,21 @@ request.interceptors.response.use(
   // ---- 网络 / HTTP 错误处理 ----
   (error) => {
     if (error.response && error.response.status === 401) {
-      // token 过期或未授权：清除登录态，跳转登录页
+      const data = error.response.data
+      // 如果响应体带有具体的错误信息（如登录失败），说明不是 token 过期，而是业务认证失败
+      if (data && (data.msg || data.message)) {
+        const errMsg = data.msg || data.message
+        ElMessage.error(errMsg)
+        return Promise.reject(new Error(errMsg))
+      }
+      // 没有具体错误信息，说明是 token 过期或未授权
       const userStore = useUserStore()
       userStore.logout()
       ElMessage.error('登录已过期，请重新登录')
-      window.location.href = '/login'
+      const isLoginPage = window.location.pathname === '/login' || window.location.hash === '#/login'
+      if (!isLoginPage) {
+        window.location.href = '/login'
+      }
       return Promise.reject(error)
     }
     ElMessage.error(error.message || '网络异常')

@@ -24,9 +24,13 @@ import com.pes.utils.CaptchaStore;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.pes.utils.CaptchaUtils;
 import org.springframework.beans.factory.annotation.Value;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -50,6 +54,7 @@ import java.util.stream.Collectors;
  * 认证服务实现
  * 提供登录、登出、验证码生成、注册等核心认证功能
  */
+@Slf4j
 @Service
 public class AuthServiceImpl implements AuthService {
 
@@ -117,12 +122,22 @@ public class AuthServiceImpl implements AuthService {
         try {
             authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(req.getUsername(), req.getPassword()));
-        } catch (Exception e) {
-            SysLoginLog failLog = new SysLoginLog();
-            failLog.setUsername(req.getUsername());
-            failLog.setStatus(0);
-            sysLoginLogService.save(failLog);
-            throw e;
+        } catch (AuthenticationException e) {
+            try {
+                SysLoginLog failLog = new SysLoginLog();
+                failLog.setUsername(req.getUsername());
+                failLog.setStatus(0);
+                sysLoginLogService.save(failLog);
+            } catch (Exception logEx) {
+                log.warn("记录登录失败日志异常: {}", logEx.getMessage());
+            }
+            if (e instanceof BadCredentialsException) {
+                throw new BusinessException(ErrorCode.USERNAME_PASSWORD_ERROR);
+            } else if (e instanceof DisabledException) {
+                throw new BusinessException(ErrorCode.USER_DISABLED);
+            } else {
+                throw new BusinessException(ErrorCode.USERNAME_PASSWORD_ERROR, e.getMessage());
+            }
         }
         SecurityContextHolder.getContext().setAuthentication(authentication);
 

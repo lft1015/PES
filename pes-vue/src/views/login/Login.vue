@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   登录页面 Login.vue
   ==================
   功能：
@@ -260,9 +260,7 @@ const handleLogin = async () => {
     }
   } catch (error) {
     // ---- 第4步：登录失败 ----
-    const msg = error?.response?.data?.message || error?.message || '登录失败，请检查用户名和密码'
-    ElMessage.error(msg)
-
+    // request.js 拦截器已经展示了 ElMessage.error，这里只需处理页面状态
     // 自动刷新验证码，清空输入（因为验证码已失效）
     captchaRef.value?.refreshCaptcha()
     form.captcha = ''
@@ -543,3 +541,4 @@ const handleLogin = async () => {
   }
 }
 </style>
+

@@ -36,7 +36,7 @@ public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
 
         Map<String, Object> body = new HashMap<>();
         body.put("code", 403);
-        body.put("message", "权限不足");
+        body.put("msg", "权限不足");
 
         ObjectMapper mapper = new ObjectMapper();
         response.getWriter().write(mapper.writeValueAsString(body));
